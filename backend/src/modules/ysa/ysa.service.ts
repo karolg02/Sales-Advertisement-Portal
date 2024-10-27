@@ -11,7 +11,7 @@ export class YsaService {
     constructor(private readonly prisma: PrismaService) {
     }
 
-    async ysaListOffer(filter: FilterYsaDto) {
+    async ysaListOffer(filter: FilterYsaDto, userid: number) {
         return this.prisma.ysa.findMany({
             where: filter.category ? { category: filter.category } : undefined,
             orderBy: {
@@ -32,7 +32,7 @@ export class YsaService {
                 city: data.city,
                 userId: userid,
             },
-        })
+        });
     }
 
     ysaEditOffer(id: number, data: EditYsaDto){
@@ -44,25 +44,27 @@ export class YsaService {
         })
     }
 
-    ysaDeleteOffer(id: number){
+    ysaDeleteOffer(id: number, userid: number){
         return this.prisma.ysa.delete({
             where: {
                 id: id,
+                userId: userid,
             }
         })
     }
 
-    ysaGetById(id: number) {
+    ysaGetById(id: number, userid: number) {
         return this.prisma.ysa.findUnique({
             where: {
                 id: id,
+                userId: userid
             }
         })
     }
-    async findOne(userId: number) {
+    async findOne(id: number) {
         return this.prisma.user.findUnique({
             where: {
-                id: userId,
+                id,
             },
         });
     }

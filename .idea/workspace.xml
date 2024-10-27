@@ -6,7 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/basic.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/basic.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/token.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/token.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/dto/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/dto/user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/edit-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/edit-ysa.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/ysa.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -38,23 +74,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "C:/Users/Karol/Desktop/aplikacjaYourSaleAnnouncement/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Run",
-    "npm.start:debug.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Karol/Desktop/aplikacjaYourSaleAnnouncement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start:debug.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="start:debug" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
@@ -91,6 +128,12 @@
       <workItem from="1730046306350" duration="2745000" />
       <workItem from="1730049081432" duration="3389000" />
       <workItem from="1730052495186" duration="1070000" />
+      <workItem from="1730053763340" duration="3423000" />
+      <workItem from="1730057229663" duration="1557000" />
+      <workItem from="1730058793691" duration="269000" />
+      <workItem from="1730059086112" duration="6000" />
+      <workItem from="1730059238277" duration="1787000" />
+      <workItem from="1730061437684" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -142,6 +185,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/backend" />
+    </ignored-roots>
     <MESSAGE value="init" />
     <MESSAGE value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
     <option name="LAST_COMMIT_MESSAGE" value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />

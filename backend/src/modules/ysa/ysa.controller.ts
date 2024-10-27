@@ -28,14 +28,14 @@ export class YsaController {
 
     @Get()
     @UseGuards(TokenGuard)
-    ysaListOffer(@Query() filter: FilterYsaDto){
-        return this.ysaService.ysaListOffer(filter);
+    ysaListOffer(@Query() filter: FilterYsaDto, @UserID() userid: number){
+        return this.ysaService.ysaListOffer(filter, userid);
     }
 
     @Get(":id")
     @UseGuards(TokenGuard)
-    async getYsaListOffer(@Param("id", ParseIntPipe) id: number) {
-        const response = await this.ysaService.ysaGetById(id);
+    async getYsaListOffer(@Param("id", ParseIntPipe) id: number, @UserID() userid: number) {
+        const response = await this.ysaService.ysaGetById(id, userid);
         if(!response){
             throw new YsaNotfoundException();
         }
@@ -45,28 +45,28 @@ export class YsaController {
 
     @Post()
     @UseGuards(TokenGuard)
-    ysaAddOffer(@Body()data: CreateYsaDto,@UserID() userid: number ){
+    ysaAddOffer(@Body()data: CreateYsaDto,@UserID() userid: number){
         return this.ysaService.ysaAddOffer(data,userid);
     }
 
     @Delete(":id")
     @HttpCode(HttpStatus.NO_CONTENT)
     @UseGuards(TokenGuard)
-    async ysaDeleteOffer(@Param("id") id: number) {
-        const response = await this.ysaService.ysaGetById(id);
+    async ysaDeleteOffer(@Param("id", ParseIntPipe) id: number,@UserID() userid: number) {
+        const response = await this.ysaService.ysaGetById(id, userid);
         if(!response){
             throw new YsaNotfoundException();
         }
-        await this.ysaService.ysaDeleteOffer(id);
+        await this.ysaService.ysaDeleteOffer(id,userid);
     }
 
     @Put(":id")
     @UseGuards(TokenGuard)
-    async ysaUpdateOffer(@Param("id", ParseIntPipe) id: number,@Body() data: EditYsaDto) {
-        const response = await this.ysaService.ysaGetById(id);
+    async ysaUpdateOffer(@Param("id", ParseIntPipe) id: number,@Body() data: EditYsaDto,@UserID() userid: number) {
+        const response = await this.ysaService.ysaGetById(id,userid);
         if(!response){
             throw new YsaNotfoundException();
         }
-        return response;
+        return this.ysaService.ysaEditOffer(id,data);
     }
 }

@@ -9,13 +9,15 @@ import {
     ParseIntPipe,
     Post,
     Put,
-    Query
+    Query, UseGuards
 } from '@nestjs/common';
 import {YsaService} from "./ysa.service";
 import {CreateYsaDto} from "./dto/create-ysa.dto";
 import {YsaNotfoundException} from "../../exceptions/ysa-notfound-exception";
 import {EditYsaDto} from "./dto/edit-ysa.dto";
 import {FilterYsaDto} from "./dto/filter-ysa.dto";
+import {TokenGuard} from "../auth/token.guard";
+import {UserID} from "../auth/user.decorator";
 
 @Controller('ysa')
 export class YsaController {
@@ -25,11 +27,13 @@ export class YsaController {
     }
 
     @Get()
+    @UseGuards(TokenGuard)
     ysaListOffer(@Query() filter: FilterYsaDto){
         return this.ysaService.ysaListOffer(filter);
     }
 
     @Get(":id")
+    @UseGuards(TokenGuard)
     async getYsaListOffer(@Param("id", ParseIntPipe) id: number) {
         const response = await this.ysaService.ysaGetById(id);
         if(!response){
@@ -40,12 +44,14 @@ export class YsaController {
 
 
     @Post()
-    ysaAddOffer(@Body()data: CreateYsaDto){
-        return this.ysaService.ysaAddOffer(data);
+    @UseGuards(TokenGuard)
+    ysaAddOffer(@Body()data: CreateYsaDto,@UserID() userid: number ){
+        return this.ysaService.ysaAddOffer(data,userid);
     }
 
     @Delete(":id")
     @HttpCode(HttpStatus.NO_CONTENT)
+    @UseGuards(TokenGuard)
     async ysaDeleteOffer(@Param("id") id: number) {
         const response = await this.ysaService.ysaGetById(id);
         if(!response){
@@ -55,6 +61,7 @@ export class YsaController {
     }
 
     @Put(":id")
+    @UseGuards(TokenGuard)
     async ysaUpdateOffer(@Param("id", ParseIntPipe) id: number,@Body() data: EditYsaDto) {
         const response = await this.ysaService.ysaGetById(id);
         if(!response){

@@ -1,11 +1,15 @@
-import {IsEnum, IsOptional} from "class-validator";
-import {Transform} from "class-transformer";
+import {IsEnum, IsOptional, IsString} from "class-validator";
 
-export class FilterYsaDto{
+export class FilterYsaDto {
     @IsOptional()
-    @IsEnum(['title', 'price', 'createdAt','category'])
-    sortBy?:string = 'createdAt';
+    @IsEnum(['title', 'price', 'createdAt', 'category'])
+    sortBy?: string = 'createdAt';
+
     @IsOptional()
     @IsEnum(['asc', 'desc'])
     sortOrder?: 'asc' | 'desc' = "desc";
+
+    @IsOptional()
+    @IsString()
+    category?: string;
 }

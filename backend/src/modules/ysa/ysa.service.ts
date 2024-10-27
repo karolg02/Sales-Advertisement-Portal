@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {CreateYsaDto} from "./dto/create-ysa.dto";
 import {PrismaService} from "../prisma/prisma.service";
 import {EditYsaDto} from "./dto/edit-ysa.dto";
@@ -11,15 +11,16 @@ export class YsaService {
     constructor(private readonly prisma: PrismaService) {
     }
 
-    async ysaListOffer(filter: FilterYsaDto){
+    async ysaListOffer(filter: FilterYsaDto) {
         return this.prisma.ysa.findMany({
+            where: filter.category ? { category: filter.category } : undefined,
             orderBy: {
                 [filter.sortBy]: filter.sortOrder,
-            }
+            },
         });
     }
 
-    async ysaAddOffer(data: CreateYsaDto){
+    async ysaAddOffer(data: CreateYsaDto, userid: number){
         return this.prisma.ysa.create({
             data: {
                 title: data.title,
@@ -28,7 +29,9 @@ export class YsaService {
                 price: data.price,
                 amount: data.amount,
                 category: data.category,
-            }
+                city: data.city,
+                userId: userid,
+            },
         })
     }
 
@@ -55,5 +58,12 @@ export class YsaService {
                 id: id,
             }
         })
+    }
+    async findOne(userId: number) {
+        return this.prisma.user.findUnique({
+            where: {
+                id: userId,
+            },
+        });
     }
 }

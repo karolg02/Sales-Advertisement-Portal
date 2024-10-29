@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ validation and some stuff">
-      <change afterPath="$PROJECT_DIR$/backend/src/modules/cart/dto/addToCart.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database">
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/cart/dto/item.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +78,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
       </set>
     </attachedChunks>
   </component>
@@ -108,7 +108,8 @@
       <workItem from="1730098176310" duration="389000" />
       <workItem from="1730196538050" duration="4118000" />
       <workItem from="1730205634624" duration="3789000" />
-      <workItem from="1730209908789" duration="2979000" />
+      <workItem from="1730209908789" duration="5293000" />
+      <workItem from="1730215333988" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -150,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730062935663</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database">
+      <option name="closed" value="true" />
+      <created>1730213146165</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730213146165</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +183,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
     <MESSAGE value="+ validation and some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ validation and some stuff" />
+    <MESSAGE value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
   </component>
 </project>

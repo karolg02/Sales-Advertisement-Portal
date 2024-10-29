@@ -6,3 +6,15 @@ export class YsaNotfoundException extends NotFoundException {
         super("Offer not found!");
     }
 }
+
+export class WrongAmount extends NotFoundException {
+    constructor() {
+        super("Wrong amount");
+    }
+}
+
+export class InCart extends NotFoundException {
+    constructor() {
+        super("Already in cart");
+    }
+}

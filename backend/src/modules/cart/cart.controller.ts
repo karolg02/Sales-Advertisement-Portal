@@ -3,8 +3,10 @@ import {CartService} from "./cart.service";
 import {UserID} from "../auth/user.decorator";
 import {TokenGuard} from "../auth/token.guard";
 import {addCartDto} from "./dto/addToCart.dto";
-import {YsaNotfoundException} from "../../exceptions/ysa-notfound-exception";
+import {InCart, WrongAmount, YsaNotfoundException} from "../../exceptions/ysa-notfound-exception";
 import {YsaService} from "../ysa/ysa.service";
+import {plainToInstance} from "class-transformer";
+import {ItemsDto} from "./dto/item.dto";
 
 @Controller('cart')
 export class CartController {
@@ -17,7 +19,8 @@ export class CartController {
     @Get()
     @UseGuards(TokenGuard)
     async getCart(@UserID() userid: number) {
-        return this.cartService.getMyCart(userid);
+        const response = await this.cartService.getMyCart(userid);
+        return plainToInstance(ItemsDto, response);
     }
 
     @Post(":id")
@@ -27,7 +30,17 @@ export class CartController {
         if(!response){
             throw new YsaNotfoundException();
         }
-        return this.cartService.addToCart(addCartDto,id, userid);
+        const response3 = await this.cartService.isInCart(id,userid);
+        if(response3.length>0){
+            throw new InCart();
+        }
+
+        const response2 = await this.ysaService.isAmountOkay(id,addCartDto.amount);
+        if(!response2){
+            throw new WrongAmount();
+        }
+        const response4 = this.cartService.addToCart(addCartDto,id, userid);
+        return plainToInstance(ItemsDto, response4);
     }
 
     @Delete(":id")

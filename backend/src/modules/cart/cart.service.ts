@@ -42,4 +42,13 @@ export class CartService {
             }
         })
     }
+
+    isInCart(id: number, userid: number) {
+        return this.prisma.cart.findMany({
+            where: {
+                ysaId: id,
+                userId: userid,
+            }
+        })
+    }
 }

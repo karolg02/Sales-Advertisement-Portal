@@ -11,7 +11,7 @@ export class YsaService {
     constructor(private readonly prisma: PrismaService) {
     }
 
-    async ysaListOffer(filter: FilterYsaDto, userid: number) {
+    async ysaListOffers(filter: FilterYsaDto) {
         return this.prisma.ysa.findMany({
             where: filter.category ? { category: filter.category } : undefined,
             orderBy: {
@@ -53,19 +53,19 @@ export class YsaService {
         })
     }
 
-    ysaGetById(id: number, userid: number) {
+    ysaGetById(id: number) {
+        return this.prisma.ysa.findUnique({
+            where: {
+                id: id,
+            }
+        })
+    }
+    ysaGetMyOfferById(id: number, userid: number) {
         return this.prisma.ysa.findUnique({
             where: {
                 id: id,
                 userId: userid
             }
         })
-    }
-    async findOne(id: number) {
-        return this.prisma.user.findUnique({
-            where: {
-                id,
-            },
-        });
     }
 }

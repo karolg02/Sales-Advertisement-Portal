@@ -25,6 +25,7 @@ model ysa {
   createdAt   DateTime @default(now())
   user        User     @relation(fields: [userId], references: [id])
   userId      Int
+  cart        Cart[] // tu tworze relacje z Cart i daje swoje id
 }
 
 model User {
@@ -35,5 +36,15 @@ model User {
   password  String
   number    Int      @unique
   createdAt DateTime @default(now())
-  offers    ysa[]
+  offers    ysa[] // tu tworze relacje z ysa, w tym wypadku daje swoje id do oferty
+  carts     Cart[] // tu tworze relacje z Cart
+}
+
+model Cart {
+  id     Int  @id @default(autoincrement())
+  User   User @relation(fields: [userId], references: [id])
+  userId Int
+  ysa    ysa  @relation(fields: [ysaId], references: [id])
+  ysaId  Int
+  amount Int  @default(1)
 }

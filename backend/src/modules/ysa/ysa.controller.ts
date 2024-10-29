@@ -28,14 +28,14 @@ export class YsaController {
 
     @Get()
     @UseGuards(TokenGuard)
-    ysaListOffer(@Query() filter: FilterYsaDto, @UserID() userid: number){
-        return this.ysaService.ysaListOffer(filter, userid);
+    ysaListOffer(@Query() filter: FilterYsaDto){
+        return this.ysaService.ysaListOffers(filter);
     }
 
     @Get(":id")
     @UseGuards(TokenGuard)
     async getYsaListOffer(@Param("id", ParseIntPipe) id: number, @UserID() userid: number) {
-        const response = await this.ysaService.ysaGetById(id, userid);
+        const response = await this.ysaService.ysaGetById(id);
         if(!response){
             throw new YsaNotfoundException();
         }
@@ -53,7 +53,7 @@ export class YsaController {
     @HttpCode(HttpStatus.NO_CONTENT)
     @UseGuards(TokenGuard)
     async ysaDeleteOffer(@Param("id", ParseIntPipe) id: number,@UserID() userid: number) {
-        const response = await this.ysaService.ysaGetById(id, userid);
+        const response = await this.ysaService.ysaGetMyOfferById(id, userid);
         if(!response){
             throw new YsaNotfoundException();
         }
@@ -63,7 +63,7 @@ export class YsaController {
     @Put(":id")
     @UseGuards(TokenGuard)
     async ysaUpdateOffer(@Param("id", ParseIntPipe) id: number,@Body() data: EditYsaDto,@UserID() userid: number) {
-        const response = await this.ysaService.ysaGetById(id,userid);
+        const response = await this.ysaService.ysaGetMyOfferById(id,userid);
         if(!response){
             throw new YsaNotfoundException();
         }

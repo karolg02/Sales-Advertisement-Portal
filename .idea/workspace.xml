@@ -4,43 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)">
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ validation and some stuff">
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/cart/dto/addToCart.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/basic.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/basic.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/token.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/token.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/user.decorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/prisma/prisma.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/token/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/token/token.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/dto/create-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/dto/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/dto/user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/edit-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/edit-ysa.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/ysa.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +104,11 @@
       <workItem from="1730058793691" duration="269000" />
       <workItem from="1730059086112" duration="6000" />
       <workItem from="1730059238277" duration="1787000" />
-      <workItem from="1730061437684" duration="1124000" />
+      <workItem from="1730061437684" duration="1498000" />
+      <workItem from="1730098176310" duration="389000" />
+      <workItem from="1730196538050" duration="4118000" />
+      <workItem from="1730205634624" duration="3789000" />
+      <workItem from="1730209908789" duration="2979000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -167,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730046529295</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="+ validation and some stuff">
+      <option name="closed" value="true" />
+      <created>1730062935663</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730062935663</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +173,7 @@
     </ignored-roots>
     <MESSAGE value="init" />
     <MESSAGE value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
+    <MESSAGE value="+ validation and some stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ validation and some stuff" />
   </component>
 </project>

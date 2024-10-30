@@ -14,11 +14,14 @@ export const MyOffers = () =>{
     return (
         <div style={{width: '100%'}}>
             {data.length === 0 ? (
-                <Text style={{textAlign:"center", display:''}} size="lg" color="black">
-                    Nie masz jeszcze żadnej oferty!
-                </Text>
+                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+                    <Text size="lg">
+                        Nie masz jeszcze żadnej oferty!
+                    </Text>
+                </div>
+
             ) : (
-                <SimpleGrid cols={{base: 1, sm: 2, lg: 3}}>
+                <SimpleGrid p="lg" ml="xl" mr="xl" cols={{base: 1, sm: 2, lg: 3}}>
                     {data.map((item) => <MyOffersList key={item.id} item={item}/>)}
                 </SimpleGrid>
             )}

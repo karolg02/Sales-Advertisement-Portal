@@ -4,42 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+frontend :)">
-      <change afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/login/LoginPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/login/api/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/login/notifications.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/api/listMyOffers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/register/api/register.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/logout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/offer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useIsLogged.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/OfferType.ts" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+front items, login, register, logout, ofert adding">
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/deleteOffer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/hooks/useOfferForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/hooks/useOfferForm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/OfferTypeValues.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/OfferTypeValues.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +142,7 @@
       <workItem from="1730229055511" duration="5601000" />
       <workItem from="1730234847932" duration="17226000" />
       <workItem from="1730252797256" duration="37000" />
-      <workItem from="1730275478868" duration="31293000" />
+      <workItem from="1730275478868" duration="37620000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -235,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730252820507</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+front items, login, register, logout, ofert adding">
+      <option name="closed" value="true" />
+      <created>1730322064447</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730322064447</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +246,7 @@
     <MESSAGE value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
     <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
     <MESSAGE value="+frontend :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="+frontend :)" />
+    <MESSAGE value="+front items, login, register, logout, ofert adding" />
+    <option name="LAST_COMMIT_MESSAGE" value="+front items, login, register, logout, ofert adding" />
   </component>
 </project>

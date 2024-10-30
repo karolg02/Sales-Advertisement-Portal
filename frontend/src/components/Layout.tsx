@@ -3,7 +3,14 @@ import {useDisclosure} from "@mantine/hooks";
 import classes from './MobileNavbar.module.css';
 import {Outlet, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
-import {IconDoorExit, IconHome, IconPencilPlus, IconShoppingBag, IconWallpaper} from "@tabler/icons-react";
+import {
+    IconBrandAmongUs,
+    IconDoorExit,
+    IconHome,
+    IconPencilPlus,
+    IconShoppingBag,
+    IconWallpaper
+} from "@tabler/icons-react";
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 
 export const Layout = () => {
@@ -28,7 +35,9 @@ export const Layout = () => {
                 <Group h="100%" px="md">
                     <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
                     <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
-                    <Text size="xl" fw="bolder">YourSaleAnnouncement</Text>
+                    <Text size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right"}}>
+                        YourSaleAnnouncement<IconBrandAmongUs style={{marginLeft:4}}/>
+                    </Text>
                     <Group justify="end" style={{ flex: 1 }}>
                         <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>
                             <UnstyledButton onClick={() => navigate('/offers')} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>

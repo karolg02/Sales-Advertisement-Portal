@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database">
-      <change afterPath="$PROJECT_DIR$/backend/src/modules/cart/dto/item.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)">
+      <change afterPath="$PROJECT_DIR$/frontend/postcss.config.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/error/ErrorPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/azureUploader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/hooks/useOfferForm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/OfferTypeValues.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,26 +52,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Karol/Desktop/aplikacjaYourSaleAnnouncement&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start:debug.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore_missing_gitignore": "true",
+    "javascript.nodejs.core.library.configured.version": "20.18.0",
+    "javascript.nodejs.core.library.typings.version": "20.17.3",
+    "last_opened_file_path": "C:/Users/Karol/Desktop/aplikacjaYourSaleAnnouncement",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.backend.executor": "Run",
+    "npm.frontend.executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.start:debug.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="start:debug" type="js.build_tools.npm" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src\features\yoursalesannouncement" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.frontend">
+    <configuration name="backend" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
       <scripts>
@@ -74,6 +90,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="frontend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="$APPLICATION_CONFIG_DIR$/node/versions/20.15.0/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.backend" />
+      <item itemvalue="npm.frontend" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -109,7 +139,13 @@
       <workItem from="1730196538050" duration="4118000" />
       <workItem from="1730205634624" duration="3789000" />
       <workItem from="1730209908789" duration="5293000" />
-      <workItem from="1730215333988" duration="846000" />
+      <workItem from="1730215333988" duration="1046000" />
+      <workItem from="1730221200086" duration="6000" />
+      <workItem from="1730221482679" duration="661000" />
+      <workItem from="1730223895571" duration="9000" />
+      <workItem from="1730228777828" duration="32000" />
+      <workItem from="1730229055511" duration="5601000" />
+      <workItem from="1730234847932" duration="17226000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -159,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730213146165</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)">
+      <option name="closed" value="true" />
+      <created>1730216378802</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730216378802</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +228,7 @@
     <MESSAGE value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
     <MESSAGE value="+ validation and some stuff" />
     <MESSAGE value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
+    <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
   </component>
 </project>

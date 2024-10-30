@@ -9,7 +9,8 @@ import {
     ParseIntPipe,
     Post,
     Put,
-    Query, UseGuards
+    Query,
+    UseGuards
 } from '@nestjs/common';
 import {YsaService} from "./ysa.service";
 import {CreateYsaDto} from "./dto/create-ysa.dto";
@@ -40,6 +41,12 @@ export class YsaController {
             throw new YsaNotfoundException();
         }
         return response;
+    }
+
+    @Get('/me/me')
+    @UseGuards(TokenGuard)
+    async getYourOffers(@UserID() userid: number){
+        return this.ysaService.getMyOffers(userid);
     }
 
 

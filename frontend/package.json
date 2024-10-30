@@ -20,6 +20,7 @@
     "@mantine/notifications": "^7.13.4",
     "@tabler/icons-react": "^3.21.0",
     "dayjs": "^1.11.13",
+    "ky": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",

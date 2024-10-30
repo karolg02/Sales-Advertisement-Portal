@@ -17,7 +17,7 @@ export class CreateYsaDto{
     @IsNotEmpty()
     price: number;
 
-    @IsInt()
+    @IsNumber()
     @IsNotEmpty()
     amount: number;
 

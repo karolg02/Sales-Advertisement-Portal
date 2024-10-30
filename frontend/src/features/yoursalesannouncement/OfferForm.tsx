@@ -1,11 +1,26 @@
 import {useState} from 'react';
-import {Button, Card, Grid, Group, NumberInput, Paper, rem, Stack, Text, Textarea, TextInput,Image} from "@mantine/core";
+import {
+    Button,
+    Card,
+    Grid,
+    Group,
+    Image,
+    NumberInput,
+    Paper,
+    rem,
+    Stack,
+    Text,
+    Textarea,
+    TextInput
+} from "@mantine/core";
 import {useOfferForm} from "./hooks/useOfferForm.ts";
 import {Notifications} from "@mantine/notifications";
 import {Dropzone, IMAGE_MIME_TYPE} from "@mantine/dropzone";
 import {IconPhoto, IconUpload, IconX} from '@tabler/icons-react';
 import {uploadToAzure} from "./azureUploader.ts";
 import {categories} from "./categories.ts";
+import {OfferTypeValues} from "../../types/OfferTypeValues.ts";
+import {createOffer} from "./api/create-offer.ts";
 
 export const OfferForm = () => {
     const form = useOfferForm();
@@ -19,16 +34,25 @@ export const OfferForm = () => {
             const url = await uploadToAzure(file);
             if (url) {
                 newUploadedUrls.push(url);
-                console.log("Uploaded:", url);
+                console.log("Uploaded:", url, selectedCategory);
             }
         }
         setUploadedUrls((prevUrls) => [...prevUrls, ...newUploadedUrls]);
-        console.log("All uploaded image URLs:", newUploadedUrls);
+
+        if (newUploadedUrls.length > 0) {
+            form.setFieldValue("image", newUploadedUrls[0]);
+        }
     };
 
-    const handleSubmit = async () => {
-        // logikę do przesyłania formularza
-        console.log("Submitted image URLs:", uploadedUrls);
+    const handleSubmit = async (vals: OfferTypeValues) => {
+        try{
+            console.log(vals);
+            await createOffer(vals);
+            console.log("Wyslano! :)")
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -39,14 +63,14 @@ export const OfferForm = () => {
                     <Stack gap={"lg"}>
                         <TextInput
                             withAsterisk
-                            label="Title"
-                            placeholder="Title"
+                            label="Tytuł"
+                            placeholder="tytuł"
                             {...form.getInputProps('title')}
                         />
                         <Textarea
                             withAsterisk
-                            label="Description"
-                            placeholder="Description"
+                            label="Opis"
+                            placeholder="opis"
                             {...form.getInputProps('description')}
                         />
 
@@ -61,17 +85,25 @@ export const OfferForm = () => {
                                     {categories.map((category) => (
                                         <div key={category.value}>
                                             <Card
+                                                {...form.getInputProps('category')}
                                                 shadow="sm"
                                                 padding="lg"
-                                                onClick={() => setSelectedCategory(category.value)}
+                                                ml="sm"
+                                                onClick={() => {
+                                                    setSelectedCategory(category.value);
+                                                    form.setFieldValue('category', category.value);
+                                                }}
                                                 style={{
+                                                    width: "200px",
                                                     cursor: 'pointer',
-                                                    border: selectedCategory === category.value ? '1px solid blue' : 'none'
+                                                    border: selectedCategory === category.value ? '1px solid blue' : '1px solid'
                                                 }}
                                             >
-                                                <Text style={{textAlign:"center"}} size="md">{category.label}</Text>
+                                                <Text style={{ textAlign: "center" }} size="md">{category.label}</Text>
                                             </Card>
+
                                         </div>
+
                                     ))}
                                 </Grid>
                             </div>
@@ -80,7 +112,7 @@ export const OfferForm = () => {
                         <NumberInput mr="lg"
                             style={{width: "20%"}}
                             withAsterisk
-                            label="price"
+                            label="Cena"
                             placeholder="zł"
                             {...form.getInputProps('price')}
                         />
@@ -88,7 +120,7 @@ export const OfferForm = () => {
                         <NumberInput mr="lg"
                             style={{width: "20%"}}
                             withAsterisk
-                            label="amount"
+                            label="Ilość"
                             placeholder=" "
                             {...form.getInputProps('amount')}
                         />
@@ -96,8 +128,8 @@ export const OfferForm = () => {
                         <TextInput mr="lg"
                             style={{width: "40%"}}
                             withAsterisk
-                            label="city"
-                            placeholder="city"
+                            label="Miasto"
+                            placeholder="miasto"
                             {...form.getInputProps('city')}
                         />
                         </Grid>
@@ -131,10 +163,10 @@ export const OfferForm = () => {
 
                                 <div>
                                     <Text size="xl" inline>
-                                        Drag image here or click to select file
+                                        Przeciągnij lub kliknij
                                     </Text>
                                     <Text size="sm" c="dimmed" inline mt={7}>
-                                        Attach one photo
+                                        Załącz zdjęcie które ma być widoczne
                                     </Text>
                                 </div>
                             </Group>
@@ -161,7 +193,7 @@ export const OfferForm = () => {
                             <Button style={{textAlign: "right"}}
                                     variant="gradient"
                                     gradient={{ from: 'blue', to: 'green', deg: 270 }}
-                                    type="submit">Add an offer
+                                    type="submit">Dodaj oferte
                             </Button>
                         </div>
                     </Stack>

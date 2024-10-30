@@ -1,7 +1,21 @@
-import {useSearchParams} from "react-router-dom";
+import {SimpleGrid} from "@mantine/core";
+import {OfferListItem} from "./OfferListItem.tsx";
+import {useEffect, useState} from "react";
+import {OfferType} from "../../types/OfferType.ts";
+import {listOffer} from "./api/offer.ts";
 
 export const OfferList = () =>{
-    const [searchParams] = useSearchParams();
+    const [data, setData] = useState<OfferType[]>([]);
 
-    return <div>{searchParams}</div>
+    useEffect(() => {
+        listOffer().then((response) => setData(response));
+    })
+
+    return (
+        <div style={{width:'100%'}}>
+            <SimpleGrid cols={{base:1,sm:2,lg:3}}>
+                {data.map((item)=><OfferListItem key={item.id} item={item} />)}
+            </SimpleGrid>
+        </div>
+    )
 }

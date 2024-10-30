@@ -1,34 +1,63 @@
-import {RouteObject, useRoutes} from "react-router-dom";
+import {Navigate, RouteObject, useRoutes} from "react-router-dom";
 import {Layout} from "../components/Layout.tsx";
-import {OfferList} from "./yoursalesannouncement/OfferList.tsx";
-import {OfferForm} from "./yoursalesannouncement/OfferForm.tsx";
 import {ErrorPage} from "./error/ErrorPage.tsx";
+import {LoginPage} from "./login/LoginPage.tsx";
+import {useIsLogged} from "../hooks/useIsLogged.ts";
+import {OfferForm} from "./yoursalesannouncement/OfferForm.tsx";
+import {OfferList} from "./yoursalesannouncement/OfferList.tsx";
+import {RegisterPage} from "./register/RegisterPage.tsx";
+import {MyOffers} from "./myoffers/MyOffers.tsx";
 
-const routes: RouteObject[] = [
+const publicRoutes: RouteObject[] = [
     {
-        path: '/',
-        element: <Layout/>,
+        path: "/",
         children: [
             {
-                path: '/offers',
-                element: <OfferList/>
-            },
-            {
-                path: '/offers/new',
-                element: <OfferForm/>
-            },
-            {
-                path: '/offers/:id',
-                element: <OfferForm/>
+                path: '/login',
+                element: <LoginPage/>
+            },{
+                path: '/register',
+                element: <RegisterPage/>
             },
             {
                 path: '*',
-                element: <ErrorPage/>
+                element: <Navigate to="/login" replace/>
             }
         ]
     }
 ]
 
-export const Routing = () =>{
+const privateRoutes: RouteObject[] = [
+    {
+        path: '/',
+        element: <Layout/>,
+        children: [
+                    {
+                        path: '/offers',
+                        element: <OfferList/>
+                    },
+                    {
+                        path: '/offers/new',
+                        element: <OfferForm/>
+                    },
+                    {
+                        path: '/offers/:id',
+                        element: <OfferForm/>
+                    },
+                    {
+                        path: '/myoffers',
+                        element: <MyOffers/>
+                    },
+                    {
+                        path: '*',
+                        element: <ErrorPage/>
+                    }
+                ]
+    }
+]
+
+export const Routing = () => {
+    const isLogged = useIsLogged();
+    const routes = isLogged ? privateRoutes : publicRoutes;
     return useRoutes(routes);
 }

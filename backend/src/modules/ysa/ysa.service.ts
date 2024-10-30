@@ -68,6 +68,14 @@ export class YsaService {
             }
         })
     }
+
+    getMyOffers(userid: number) {
+        return this.prisma.ysa.findMany({
+            where: {
+                userId: userid
+            }
+        })
+    }
     //for cart
     isAmountOkay(id: number,amount: number) {
         return this.prisma.ysa.findUnique({

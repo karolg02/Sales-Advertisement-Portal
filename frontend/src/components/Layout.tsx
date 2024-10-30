@@ -3,11 +3,17 @@ import {useDisclosure} from "@mantine/hooks";
 import classes from './MobileNavbar.module.css';
 import {Outlet, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
+import {IconDoorExit, IconHome, IconPencilPlus, IconShoppingBag, IconWallpaper} from "@tabler/icons-react";
+import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 
 export const Layout = () => {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
     const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
     const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        await logout(navigate);
+    };
 
     return (
         <AppShell
@@ -17,7 +23,6 @@ export const Layout = () => {
                 breakpoint: 'sm',
                 collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
             }}
-            padding="md"
         >
             <AppShell.Header>
                 <Group h="100%" px="md">
@@ -25,16 +30,27 @@ export const Layout = () => {
                     <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
                     <Text size="xl" fw="bolder">YourSaleAnnouncement</Text>
                     <Group justify="end" style={{ flex: 1 }}>
-                        <Group ml="xl" gap={4} visibleFrom="sm" style={{alignItems:"end"}}>
-                            <UnstyledButton onClick={()=>navigate('/offers')} className={classes.control}>Home</UnstyledButton>
-                            <UnstyledButton onClick={()=>navigate('/offers/new')} className={classes.control}>Make an offer</UnstyledButton>
-                            <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
-                            <UnstyledButton className={classes.control}>Support</UnstyledButton>
+                        <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>
+                            <UnstyledButton onClick={() => navigate('/offers')} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>
+                                Strona Główna <IconHome style={{ marginLeft: 4 }}/>
+                            </UnstyledButton>
+                            <UnstyledButton onClick={() => navigate('/offers/new')} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>
+                                Stwórz ofertę <IconPencilPlus style={{ marginLeft: 4 }}/>
+                            </UnstyledButton>
+                            <UnstyledButton onClick={() => navigate('/myoffers')} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>
+                                Moje oferty <IconWallpaper style={{ marginLeft: 4 }}/>
+                            </UnstyledButton>
+                            <UnstyledButton onClick={() => navigate('/cart')} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>
+                                Twój koszyk <IconShoppingBag style={{ marginLeft: 4 }} />
+                            </UnstyledButton>
+                            <UnstyledButton onClick={handleLogout} className={classes.control} style={{ display: 'flex', alignItems: 'center' }}>
+                                Wyloguj <IconDoorExit style={{ marginLeft: 4 }}/>
+                            </UnstyledButton>
                         </Group>
                     </Group>
                 </Group>
             </AppShell.Header>
-            <AppShell.Navbar p="md">
+            <AppShell.Navbar>
                 <AppNavbar />
             </AppShell.Navbar>
             <AppShell.Main>
@@ -43,16 +59,3 @@ export const Layout = () => {
         </AppShell>
     )
 }
-
-// <div>
-//     <Header></Header>
-//     <Outlet/>
-// </div>
-//<MantineLogo size={30} />
-
-// Navbar
-// {Array(15)
-//     .fill(0)
-//     .map((_, index) => (
-//         <Skeleton key={index} h={28} mt="sm" animate={false} />
-//     ))}

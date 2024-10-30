@@ -1,0 +1,51 @@
+import {Badge, Button, Card, Group, Image, Text} from '@mantine/core';
+import {OfferType} from "../../types/OfferType.ts";
+import {IconRosetteDiscountCheck} from "@tabler/icons-react";
+
+interface OfferListItemProps{
+    item: OfferType;
+}
+
+export const MyOffersList = ({item}: OfferListItemProps) => {
+    return (
+        <Card shadow="sm" padding="lg" radius="lg" withBorder>
+            <Card.Section>
+                <Image
+                    src={item.image}
+                    radius="md"
+                    mih="auto"
+                    h="60vh"
+                    fit='fill'
+                />
+            </Card.Section>
+
+
+            <Group justify="space-between" mt="md" mb="xs">
+                <Text fw={500}>{item.title}</Text>
+                <Badge style={{paddingTop:'1.2em', paddingBottom:'1em'}} color="green"><IconRosetteDiscountCheck/></Badge>
+            </Group>
+
+            <Text size="sm" c="dimmed" mih="4em" mah="4em">
+                {item.description}
+            </Text>
+            <Text>
+                {item.city}
+            </Text>
+            <Text>
+                {item.price} zł
+            </Text>
+            <Text>
+                {item.category}
+            </Text>
+
+            <Button mt="md" radius="md"
+                    variant="gradient"
+                    gradient={{ from: 'blue', to: 'green', deg: 270 }}
+                    ml="xl"
+                    mr="xl"
+            >
+                Przejdz do oferty
+            </Button>
+        </Card>
+    );
+}

@@ -1,5 +1,5 @@
-export type OfferTypeValues = {
-    id?: number;
+export type OfferType = {
+    id: number;
     title: string;
     description: string;
     image: string;

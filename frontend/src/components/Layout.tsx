@@ -1,7 +1,7 @@
 import {AppShell, Burger, Group, Text, UnstyledButton} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import classes from './MobileNavbar.module.css';
-import {Outlet, useNavigate} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
 import {
     IconBrandAmongUs,
@@ -12,11 +12,19 @@ import {
     IconWallpaper
 } from "@tabler/icons-react";
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
+import {useState} from "react";
 
 export const Layout = () => {
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-    const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+    const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const showBurger = location.pathname === '/offers';
+    const [isRed, setIsRed] = useState(false);
+
+    const handleClick = () => {
+        setIsRed(!isRed);
+    };
 
     const handleLogout = async () => {
         await logout(navigate);
@@ -33,10 +41,22 @@ export const Layout = () => {
         >
             <AppShell.Header>
                 <Group h="100%" px="md">
-                    <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
-                    <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
-                    <Text size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right"}}>
-                        YourSaleAnnouncement<IconBrandAmongUs style={{marginLeft:4}}/>
+                    {showBurger && (
+                        <>
+                            <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
+                            <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
+                        </>
+                    )}
+                    {!showBurger && (
+                        <>
+                            <IconBrandAmongUs
+                                style={{ marginRight: 4, color: isRed ? 'red' : 'black' }}
+                                onClick={handleClick}
+                            />
+                        </>
+                    )}
+                    <Text size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right", marginLeft: 4 }}>
+                        YourSaleAnnouncement
                     </Text>
                     <Group justify="end" style={{ flex: 1 }}>
                         <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>

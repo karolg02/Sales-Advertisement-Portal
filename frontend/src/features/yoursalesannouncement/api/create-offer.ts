@@ -14,7 +14,6 @@ export const createOffer = async (data: OfferTypeValues) => {
         return response.ok;
 
     } catch (error) {
-        console.error('Error editing:', error);
         return null;
     }
 }

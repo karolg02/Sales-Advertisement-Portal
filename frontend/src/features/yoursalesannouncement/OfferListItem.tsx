@@ -8,7 +8,7 @@ interface OfferListItemProps{
 
 export const OfferListItem = ({item}: OfferListItemProps) => {
     return (
-        <Card shadow="sm" padding="lg" radius="lg" withBorder>
+        <Card shadow='xl' padding="lg" radius="lg" withBorder>
             <Card.Section>
                 <Image
                     src={item.image}

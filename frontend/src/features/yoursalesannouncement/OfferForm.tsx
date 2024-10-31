@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {
+    Badge,
     Button,
     Card,
     Grid,
@@ -8,7 +9,7 @@ import {
     NumberInput,
     Paper,
     rem,
-    Stack,
+    SimpleGrid,
     Text,
     Textarea,
     TextInput
@@ -16,7 +17,7 @@ import {
 import {useOfferForm} from "./hooks/useOfferForm.ts";
 import {Notifications} from "@mantine/notifications";
 import {Dropzone, IMAGE_MIME_TYPE} from "@mantine/dropzone";
-import {IconPhoto, IconUpload, IconX} from '@tabler/icons-react';
+import {IconCategory, IconMapPin, IconPhoto, IconRosetteDiscountCheck, IconUpload, IconX} from '@tabler/icons-react';
 import {uploadToAzure} from "./azureUploader.ts";
 import {categories} from "./categories.ts";
 import {OfferTypeValues} from "../../types/OfferTypeValues.ts";
@@ -26,7 +27,6 @@ export const OfferForm = () => {
     const form = useOfferForm();
     const [uploadedUrls, setUploadedUrls] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-    const [showCategories, setShowCategories] = useState(false);
 
     const handleDrop = async (files: File[]) => {
         const newUploadedUrls: string[] = [];
@@ -46,158 +46,206 @@ export const OfferForm = () => {
 
     const handleSubmit = async (vals: OfferTypeValues) => {
         try{
-            console.log(vals);
             await createOffer(vals);
-            console.log("Wyslano! :)")
+            Notifications.show({color: "green", title: "Sukces!", message: "Pomyślnie dodano oferte!",autoClose: 2000, });
         }
         catch (error) {
+            Notifications.show({color: "green", title: "Niepowodzenie!", message: "Nie udało się dodać oferty! :(",autoClose: 2000, });
             console.error(error);
         }
     }
 
     return (
         <div>
-            <Paper shadow="xs" p="xl" style={{ position: 'relative' }}>
+            <Paper shadow="xs" p="xl" style={{ position: 'relative'}}>
                 <Notifications style={{ position: 'fixed', bottom: 0, right: 0 }} />
-                <form onSubmit={form.onSubmit(handleSubmit)}>
-                    <Stack gap={"lg"}>
-                        <TextInput
-                            withAsterisk
-                            label="Tytuł"
-                            placeholder="tytuł"
-                            {...form.getInputProps('title')}
-                        />
-                        <Textarea
-                            withAsterisk
-                            label="Opis"
-                            placeholder="opis"
-                            {...form.getInputProps('description')}
-                        />
+                    <form onSubmit={form.onSubmit(handleSubmit)}>
+                        <SimpleGrid ml="xl" mr="xl" cols={{base: 1, sm: 2, lg: 3}}>
 
-                        <Button onClick={() => setShowCategories((prev) => !prev)} variant="outline">
-                            {showCategories ? "Hide Categories" : "Show Categories"}
-                        </Button>
-
-                        {showCategories && (
                             <div>
-                                <Text size="lg">Choose a category:</Text>
-                                <Grid pt="lg" pb="lg">
+                                <Group display='grid' justify="center" mt="md" mb="xs">
+
+                                    <Group justify="center" mt="md" mb="xs">
+                                        <Text fw="bold" size="lg">Wypełnij formularz</Text>
+                                    </Group>
+
+                                    <TextInput
+                                        withAsterisk
+                                        label="Tytuł"
+                                        placeholder="tytuł"
+                                        {...form.getInputProps('title')}
+                                    />
+                                    <Textarea
+                                        pt="xl"
+                                        autosize
+                                        minRows={5}
+                                        withAsterisk
+                                        label="Opis"
+                                        placeholder="opis"
+                                        {...form.getInputProps('description')}
+                                    />
+
+                                    <Grid pt="xl" ml='xs' mb="lg">
+
+                                        <NumberInput mr="lg"
+                                                     style={{width: "20%"}}
+                                                     withAsterisk
+                                                     label="Cena"
+                                                     placeholder="zł"
+                                                     {...form.getInputProps('price')}
+                                        />
+
+                                        <NumberInput mr="lg"
+                                                     style={{width: "20%"}}
+                                                     withAsterisk
+                                                     label="Ilość"
+                                                     placeholder=""
+                                                     {...form.getInputProps('amount')}
+                                        />
+
+                                        <TextInput mr="lg"
+                                                   style={{width: "40%"}}
+                                                   withAsterisk
+                                                   label="Miasto"
+                                                   placeholder="miasto"
+                                                   {...form.getInputProps('city')}
+                                        />
+                                    </Grid>
+
+                                </Group>
+                            </div>
+
+                            <div>
+                                <Card shadow="sm" padding="lg" radius="lg" withBorder>
+                                    <Card.Section>
+                                        {uploadedUrls.length > 0 && (
+                                            <Image
+                                                src={uploadedUrls[0]}
+                                                radius="md"
+                                                mih="auto"
+                                                h="58vh"
+                                                fit='fill'
+                                            />
+                                        )}
+                                        {uploadedUrls.length == 0 && (
+                                            <Dropzone
+                                                h="58vh"
+                                                onDrop={handleDrop}
+                                                onReject={(files) => console.log('Rejected files', files)}
+                                                maxSize={5 * 1024 ** 2}
+                                                accept={IMAGE_MIME_TYPE}
+                                            >
+                                                <Group justify="center" gap="xl" style={{ pointerEvents: 'none', height: '50vh' }}>
+                                                    <Dropzone.Accept>
+                                                        <IconUpload
+                                                            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
+                                                            stroke={1.5}
+                                                        />
+                                                    </Dropzone.Accept>
+                                                    <Dropzone.Reject>
+                                                        <IconX
+                                                            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
+                                                            stroke={1.5}
+                                                        />
+                                                    </Dropzone.Reject>
+                                                    <Dropzone.Idle>
+                                                        <IconPhoto
+                                                            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-dimmed)' }}
+                                                            stroke={1.5}
+                                                        />
+                                                    </Dropzone.Idle>
+
+                                                    <div>
+                                                        <Text size="xl" inline>
+                                                            Przeciągnij lub kliknij
+                                                        </Text>
+                                                        <Text size="sm" c="dimmed" inline mt={7}>
+                                                            Załącz zdjęcie które ma być widoczne
+                                                        </Text>
+                                                    </div>
+                                                </Group>
+                                            </Dropzone>
+                                        )}
+                                    </Card.Section>
+
+
+                                    <Group justify="space-between" mt="md" mb="xs">
+                                        <Text fw={500}>Tytuł</Text>
+                                        <Badge style={{paddingTop: '1.2em', paddingBottom: '1em'}}
+                                               color="green"><IconRosetteDiscountCheck/></Badge>
+                                    </Group>
+
+                                    <Text size="sm" c="dimmed" mih="4em" mah="4em" lineClamp={2}>
+                                        Opis
+                                    </Text>
+
+                                    <Group justify="space-between" gap="xl">
+                                        <Text style={{display: 'flex', alignItems: 'center', textAlign: "left"}}>
+                                            <IconMapPin style={{marginRight: 4}}/>Miejscowość:
+                                        </Text>
+                                        <Text style={{display: 'flex', alignItems: 'center', textAlign: "right"}}>
+                                            <IconCategory style={{marginRight: 4}}/>Kategoria
+                                        </Text>
+                                    </Group>
+                                    <Group justify="space-between" gap="xl">
+                                        <Text style={{textAlign: "left"}}>
+                                            Miasto
+                                        </Text>
+                                        <Text style={{textAlign: "right"}}>
+                                            {selectedCategory}
+                                        </Text>
+                                    </Group>
+
+
+                                    <Group>
+                                        Cena
+                                    </Group>
+
+                                    <Button mt="md" radius="md"
+                                            variant="gradient"
+                                            gradient={{from: 'blue', to: 'green', deg: 270}}
+                                            ml="xl"
+                                            mr="xl"
+                                            type="submit"
+                                    >
+                                        Złóż oferte
+                                    </Button>
+                                </Card>
+                            </div>
+
+                            <div>
+                                <Group justify="center" mt="md" mb="xs">
+                                    <Text fw="bold" size="lg">Wybierz kategorię</Text>
+                                </Group>
+
+                                <SimpleGrid pt="lg" pb="lg" cols={2}>
                                     {categories.map((category) => (
                                         <div key={category.value}>
                                             <Card
                                                 {...form.getInputProps('category')}
                                                 shadow="sm"
                                                 padding="lg"
-                                                ml="sm"
                                                 onClick={() => {
                                                     setSelectedCategory(category.value);
                                                     form.setFieldValue('category', category.value);
                                                 }}
                                                 style={{
-                                                    width: "200px",
                                                     cursor: 'pointer',
-                                                    border: selectedCategory === category.value ? '1px solid blue' : '1px solid'
+                                                    border: "1px solid grey",
+                                                    backgroundColor: selectedCategory === category.value ? "lightgrey" : 'white',
                                                 }}
                                             >
-                                                <Text style={{ textAlign: "center" }} size="md">{category.label}</Text>
+                                                <Text style={{textAlign: "center"}} size="md">{category.label}</Text>
                                             </Card>
 
                                         </div>
 
                                     ))}
-                                </Grid>
+                                </SimpleGrid>
                             </div>
-                        )}
-                        <Grid ml='xs' mb="lg">
-                        <NumberInput mr="lg"
-                            style={{width: "20%"}}
-                            withAsterisk
-                            label="Cena"
-                            placeholder="zł"
-                            {...form.getInputProps('price')}
-                        />
 
-                        <NumberInput mr="lg"
-                            style={{width: "20%"}}
-                            withAsterisk
-                            label="Ilość"
-                            placeholder=" "
-                            {...form.getInputProps('amount')}
-                        />
-
-                        <TextInput mr="lg"
-                            style={{width: "40%"}}
-                            withAsterisk
-                            label="Miasto"
-                            placeholder="miasto"
-                            {...form.getInputProps('city')}
-                        />
-                        </Grid>
-
-                        <Dropzone
-                            style={{ border: "1px solid grey" }}
-                            onDrop={handleDrop}
-                            onReject={(files) => console.log('Rejected files', files)}
-                            maxSize={5 * 1024 ** 2}
-                            accept={IMAGE_MIME_TYPE}
-                        >
-                            <Group justify="center" gap="xl" mih={150} style={{ pointerEvents: 'none' }}>
-                                <Dropzone.Accept>
-                                    <IconUpload
-                                        style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
-                                        stroke={1.5}
-                                    />
-                                </Dropzone.Accept>
-                                <Dropzone.Reject>
-                                    <IconX
-                                        style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
-                                        stroke={1.5}
-                                    />
-                                </Dropzone.Reject>
-                                <Dropzone.Idle>
-                                    <IconPhoto
-                                        style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-dimmed)' }}
-                                        stroke={1.5}
-                                    />
-                                </Dropzone.Idle>
-
-                                <div>
-                                    <Text size="xl" inline>
-                                        Przeciągnij lub kliknij
-                                    </Text>
-                                    <Text size="sm" c="dimmed" inline mt={7}>
-                                        Załącz zdjęcie które ma być widoczne
-                                    </Text>
-                                </div>
-                            </Group>
-                        </Dropzone>
-
-                        {/* Wyświetlanie przesłanych linków */}
-                        {uploadedUrls.length > 0 && (
-                            <div style={{marginTop: '20px'}}>
-                                <Image
-                                    h={200}
-                                    w="auto"
-                                    fit="contain"
-                                    src={uploadedUrls[0]}
-                                />
-                            </div>
-                        )}
-
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            height: '100%'
-                        }}>
-                            <Button style={{textAlign: "right"}}
-                                    variant="gradient"
-                                    gradient={{ from: 'blue', to: 'green', deg: 270 }}
-                                    type="submit">Dodaj oferte
-                            </Button>
-                        </div>
-                    </Stack>
-                </form>
+                        </SimpleGrid>
+                    </form>
             </Paper>
         </div>
     );

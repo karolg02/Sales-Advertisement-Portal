@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+front items, login, register, logout, ofert adding">
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/deleteOffer.ts" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ deleting option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +140,9 @@
       <workItem from="1730229055511" duration="5601000" />
       <workItem from="1730234847932" duration="17226000" />
       <workItem from="1730252797256" duration="37000" />
-      <workItem from="1730275478868" duration="37620000" />
+      <workItem from="1730275478868" duration="38361000" />
+      <workItem from="1730385200352" duration="717000" />
+      <workItem from="1730402003870" duration="8286000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -216,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730322064447</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="+ deleting option">
+      <option name="closed" value="true" />
+      <created>1730328239442</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730328239442</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +255,7 @@
     <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
     <MESSAGE value="+frontend :)" />
     <MESSAGE value="+front items, login, register, logout, ofert adding" />
-    <option name="LAST_COMMIT_MESSAGE" value="+front items, login, register, logout, ofert adding" />
+    <MESSAGE value="+ deleting option" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ deleting option" />
   </component>
 </project>

@@ -7,6 +7,7 @@ import {OfferForm} from "./yoursalesannouncement/OfferForm.tsx";
 import {OfferList} from "./yoursalesannouncement/OfferList.tsx";
 import {RegisterPage} from "./register/RegisterPage.tsx";
 import {MyOffers} from "./myoffers/MyOffers.tsx";
+import {SingleOffer} from "./singleoffer/SingleOffer.tsx";
 
 const publicRoutes: RouteObject[] = [
     {
@@ -41,8 +42,8 @@ const privateRoutes: RouteObject[] = [
                         element: <OfferForm/>
                     },
                     {
-                        path: '/offers/:id',
-                        element: <OfferForm/>
+                        path: '/offer/:id',
+                        element: <SingleOffer/>
                     },
                     {
                         path: '/myoffers',

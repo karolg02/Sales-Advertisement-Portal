@@ -13,7 +13,7 @@ export const MyOffersList = ({ item }: OfferListItemProps) => {
     const handleDelete = async () => {
         setTimeout(async () => {
             await deleteOffer(item.id);
-        }, 500);
+        }, 100);
     };
 
     return (
@@ -24,14 +24,15 @@ export const MyOffersList = ({ item }: OfferListItemProps) => {
                     src={item.image}
                     radius="md"
                     mih="auto"
-                    h="60vh"
+                    h="58vh"
                     fit='fill'
                 />
             </Card.Section>
 
             <Group justify="space-between" mt="md" mb="xs">
                 <Text fw={500}>{item.title}</Text>
-                <Badge style={{ paddingTop: '1.2em', paddingBottom: '1em' }} color="green"><IconRosetteDiscountCheck /></Badge>
+                <Badge style={{ paddingTop: '1.2em', paddingBottom: '1em' }} variant="transparent"
+                       color="yellow"><IconRosetteDiscountCheck /></Badge>
             </Group>
 
             <Text size="sm" c="dimmed" mih="4em" mah="4em" lineClamp={2}>
@@ -59,11 +60,17 @@ export const MyOffersList = ({ item }: OfferListItemProps) => {
                 Cena: {item.price} zł
             </Group>
             <Group justify="space-between" gap="xl">
-                <Button mt="md" radius="md" style={{ width: '40%' }}>
+                <Button mt="md" radius="md"
+                        variant="gradient"
+                        gradient={{from: 'blue', to: 'dark', deg: 60}}
+                        style={{ width: '40%' }}>
                     Edytuj
                 </Button>
                 <Button onClick={handleDelete}
-                    mt="md" radius="md" style={{ width: '40%', backgroundColor: "red" }}>
+                    mt="md" radius="md"
+                        variant="gradient"
+                        gradient={{from: 'red', to: 'dark', deg: 60}}
+                        style={{ width: '40%'}}>
                     Usuń
                 </Button>
             </Group>

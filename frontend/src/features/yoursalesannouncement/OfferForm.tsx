@@ -34,7 +34,6 @@ export const OfferForm = () => {
             const url = await uploadToAzure(file);
             if (url) {
                 newUploadedUrls.push(url);
-                console.log("Uploaded:", url, selectedCategory);
             }
         }
         setUploadedUrls((prevUrls) => [...prevUrls, ...newUploadedUrls]);
@@ -47,10 +46,8 @@ export const OfferForm = () => {
     const handleSubmit = async (vals: OfferTypeValues) => {
         try{
             await createOffer(vals);
-            Notifications.show({color: "green", title: "Sukces!", message: "Pomyślnie dodano oferte!",autoClose: 2000, });
         }
         catch (error) {
-            Notifications.show({color: "green", title: "Niepowodzenie!", message: "Nie udało się dodać oferty! :(",autoClose: 2000, });
             console.error(error);
         }
     }
@@ -172,7 +169,8 @@ export const OfferForm = () => {
                                     <Group justify="space-between" mt="md" mb="xs">
                                         <Text fw={500}>Tytuł</Text>
                                         <Badge style={{paddingTop: '1.2em', paddingBottom: '1em'}}
-                                               color="green"><IconRosetteDiscountCheck/></Badge>
+                                               variant="transparent"
+                                               color="yellow"><IconRosetteDiscountCheck/></Badge>
                                     </Group>
 
                                     <Text size="sm" c="dimmed" mih="4em" mah="4em" lineClamp={2}>
@@ -203,7 +201,7 @@ export const OfferForm = () => {
 
                                     <Button mt="md" radius="md"
                                             variant="gradient"
-                                            gradient={{from: 'blue', to: 'green', deg: 270}}
+                                            gradient={{from: 'black', to: 'grey', deg: 270}}
                                             ml="xl"
                                             mr="xl"
                                             type="submit"
@@ -232,10 +230,12 @@ export const OfferForm = () => {
                                                 style={{
                                                     cursor: 'pointer',
                                                     border: "1px solid grey",
-                                                    backgroundColor: selectedCategory === category.value ? "lightgrey" : 'white',
+                                                    color: selectedCategory === category.value ? "orange" : 'grey',
                                                 }}
                                             >
-                                                <Text style={{textAlign: "center"}} size="md">{category.label}</Text>
+                                                <Text style={{textAlign: "center"}} size="md"
+                                                fw={selectedCategory === category.value ? "bold" :""}
+                                                >{category.label}</Text>
                                             </Card>
 
                                         </div>

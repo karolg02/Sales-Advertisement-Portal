@@ -7,4 +7,6 @@ export type OfferType = {
     amount: number;
     category: string;
     city: string;
+    createdAt: Date;
+    userId: number;
 }

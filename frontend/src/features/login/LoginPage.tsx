@@ -43,7 +43,7 @@ export const LoginPage: FC = () => {
     return (
         <div
             style={{
-                backgroundColor: 'rgb(236,236,236)'}}
+                backgroundColor: 'rgb(27,27,27)'}}
         >
             <Container
                 size="xs"
@@ -54,7 +54,7 @@ export const LoginPage: FC = () => {
                             size="xl"
                             fw={900}
                             variant="gradient"
-                            gradient={{ from: 'blue', to: 'green', deg: 90 }}
+                            gradient={{ from: 'brown', to: 'dark', deg: 0 }}
                             mb="lg"
                             style={{ textAlign: 'center' }}
                         >
@@ -77,7 +77,7 @@ export const LoginPage: FC = () => {
                                 />
                                 <Button
                                     variant="gradient"
-                                    gradient={{ from: 'blue', to: 'green', deg: 90 }}
+                                    gradient={{ from: 'orange', to: 'dark', deg: 0 }}
                                     type="submit"
                                     fullWidth
                                 >
@@ -89,7 +89,7 @@ export const LoginPage: FC = () => {
                                 </Stack>
                                 <Button
                                     variant="gradient"
-                                    gradient={{ from: 'red', to: 'green', deg: 270 }}
+                                    gradient={{ from: 'red', to: 'dark', deg: 0 }}
                                     onClick={() => handleRegister()}
                                     fullWidth
                                 >

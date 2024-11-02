@@ -14,7 +14,7 @@ export const MyOffers = () =>{
     return (
         <div style={{width: '100%'}}>
             {data.length === 0 ? (
-                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                     <Text size="lg">
                         Nie masz jeszcze żadnej oferty!
                     </Text>

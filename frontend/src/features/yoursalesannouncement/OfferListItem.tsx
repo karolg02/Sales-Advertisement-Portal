@@ -2,6 +2,7 @@ import {Badge, Button, Card, Group, Image, Text} from '@mantine/core';
 import {OfferType} from "../../types/OfferType.ts";
 import {IconCategory, IconMapPin, IconRosetteDiscountCheck} from "@tabler/icons-react";
 import {useNavigate} from "react-router-dom";
+import "../../style.css"
 
 interface OfferListItemProps{
     item: OfferType;
@@ -58,11 +59,11 @@ export const OfferListItem = ({item}: OfferListItemProps) => {
             </Group>
 
             <Button mt="md" radius="md"
-                    variant="gradient"
-                    gradient={{from: 'black', to: 'grey', deg: 270}}
                     ml="xl"
                     mr="xl"
+                    bg="dark"
                     onClick={() => navigate(`/offer/${item.id}`)}
+                    className="buttonCover"
             >
                 Przejdz do oferty
             </Button>

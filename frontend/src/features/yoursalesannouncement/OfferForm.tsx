@@ -200,11 +200,11 @@ export const OfferForm = () => {
                                     </Group>
 
                                     <Button mt="md" radius="md"
-                                            variant="gradient"
-                                            gradient={{from: 'black', to: 'grey', deg: 270}}
+                                            bg="dark"
                                             ml="xl"
                                             mr="xl"
                                             type="submit"
+                                            className="buttonCover"
                                     >
                                         Złóż oferte
                                     </Button>

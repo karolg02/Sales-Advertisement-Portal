@@ -1,4 +1,4 @@
-import {AppShell, Burger, Button, Group, Text} from "@mantine/core";
+import {AppShell, AppShellFooter, Burger, Button, Group, Text} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
@@ -19,6 +19,7 @@ export const Layout = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const showBurger = location.pathname === '/offers';
+    const showFooter = location.pathname === '/mycart';
     const [isRed, setIsRed] = useState(false);
 
     useEffect(() => {
@@ -77,19 +78,19 @@ export const Layout = () => {
                     </Text>
                     <Group justify="end" style={{ flex: 1}}>
                         <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>
-                            <Button c="white" variant="transparent" onClick={() => navigate('/offers')}>
+                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/offers')}>
                                 Przeglądaj oferty <IconHome style={{ marginLeft: 4, color:"orange" }}/>
                             </Button>
-                            <Button c="white" variant="transparent" onClick={() => navigate('/offers/new')}>
+                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/offers/new')}>
                                 Stwórz ofertę <IconPencilPlus style={{ marginLeft: 4, color:"orange"  }}/>
                             </Button>
-                            <Button c="white" variant="transparent" onClick={() => navigate('/myoffers')}>
+                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/myoffers')}>
                                 Moje oferty <IconWallpaper style={{ marginLeft: 4, color:"orange"  }}/>
                             </Button>
-                            <Button c="white" variant="transparent" onClick={() => navigate('/cart')}>
+                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
                                 Twój koszyk <IconShoppingBag style={{ marginLeft: 4, color:"orange"  }} />
                             </Button>
-                            <Button c="white" variant="transparent" onClick={handleLogout}>
+                            <Button className="buttonCover" variant="transparent" onClick={handleLogout}>
                                 Wyloguj <IconDoorExit style={{ marginLeft: 4, color:"orange"  }}/>
                             </Button>
                         </Group>
@@ -99,9 +100,14 @@ export const Layout = () => {
             <AppShell.Navbar c="white" style={{backgroundColor:"rgb(45,42,42)"}}>
                 <AppNavbar/>
             </AppShell.Navbar>
-            <AppShell.Main>
+            <AppShell.Main bg="rgba(225,219,219,0.8)">
                 <Outlet/>
             </AppShell.Main>
+            {showFooter && (
+                <AppShellFooter c="white" bd="0" bg="dark">
+                    tu bedzie podliczanie koszyka
+                </AppShellFooter>
+            )}
         </AppShell>
     )
 }

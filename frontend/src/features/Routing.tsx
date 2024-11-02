@@ -8,6 +8,7 @@ import {OfferList} from "./yoursalesannouncement/OfferList.tsx";
 import {RegisterPage} from "./register/RegisterPage.tsx";
 import {MyOffers} from "./myoffers/MyOffers.tsx";
 import {SingleOffer} from "./singleoffer/SingleOffer.tsx";
+import {Cart} from "./cart/Cart.tsx";
 
 const publicRoutes: RouteObject[] = [
     {
@@ -48,6 +49,10 @@ const privateRoutes: RouteObject[] = [
                     {
                         path: '/myoffers',
                         element: <MyOffers/>
+                    },
+                    {
+                        path: '/mycart',
+                        element: <Cart/>
                     },
                     {
                         path: '*',

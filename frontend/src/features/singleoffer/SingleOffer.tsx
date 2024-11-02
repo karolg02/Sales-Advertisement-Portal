@@ -14,9 +14,12 @@ import {
     SimpleGrid,
     Text
 } from "@mantine/core";
+import {Userdata} from "../userdata/userdata.ts";
+import {getUserData} from "../userdata/api/getUser.ts";
 
 export const SingleOffer = () => {
     const [data, setData] = useState<OfferType | null>(null);
+    const [userdata, setUserData] = useState<Userdata | null>(null);
     const { id } = useParams<{ id: string }>();
     const [formattedDate, setFormattedDate] = useState<string>("");
 
@@ -26,6 +29,9 @@ export const SingleOffer = () => {
                 const response = await getOffer(Number(id));
                 setData(response);
                 setFormattedDate(new Date(response.createdAt).toLocaleString());
+                const response2 = await getUserData(response.userId);
+                setUserData(response2);
+
             } catch (error) {
                 console.error("Error fetching offer:", error);
             }
@@ -33,7 +39,7 @@ export const SingleOffer = () => {
         fetchGet();
     }, [id]);
 
-    if (!data) {
+    if (!data || !userdata) {
         return <Loader />;
     }
 
@@ -50,20 +56,30 @@ export const SingleOffer = () => {
                 />
 
                 <Paper shadow="lg" p="lg">
-                    <Group justify="space-between">
-                        <Text size="xl" fw={700} mb="lg">{data.title}</Text>
-                        <Text mb="lg">Utworzono {formattedDate}</Text>
+                    <Group justify="space-between" mt="lg">
+                        <Text size="xl" fw={700} >{data.title}</Text>
+                        <Text>Utworzono {formattedDate}</Text>
                     </Group>
                     <Divider my="xl" />
 
                     <Text size="lg" fw={600}>Informacje o sprzedawcy</Text>
-                    <List>
-                        <Text>
-                            email:
-                        </Text>
-                        <Text>
-                            numer telefonu:
-                        </Text>
+                    <List pt="sm">
+                        <Group justify="space-between">
+                            <Text>
+                                Imię: {userdata.name}
+                            </Text>
+                            <Text>
+                                Email: {userdata.email}
+                            </Text>
+                        </Group>
+                        <Group justify="space-between">
+                            <Text>
+                                Nazwisko: {userdata.surename}
+                            </Text>
+                            <Text>
+                                Nr. tel:  +48 {userdata.number}
+                            </Text>
+                        </Group>
                     </List>
                     <Divider my="xl"/>
 
@@ -79,8 +95,8 @@ export const SingleOffer = () => {
                         <Text>z {data.amount} dostępnych</Text>
                     </Group>
                     <Group>
-                        <Button fullWidth color="dark">Dodaj do koszyka</Button>
-                        <Button variant="outline" color="dark" fullWidth>Kup teraz</Button>
+                        <Button fullWidth bg="dark" className="buttonCover">Dodaj do koszyka</Button>
+                        <Button variant="outline" color="dark"  fullWidth>Kup teraz</Button>
                     </Group>
                 </Paper>
             </SimpleGrid>

@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ mantine style for making an offer etc">
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/api/getOffer.ts" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ singleoffer page, which shows offer depends on id, need to add email and number to the seller">
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/Cart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/api/deletefromcart.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/api/getcart.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/userdata/api/getUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/userdata/userdata.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/CartType.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/login/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/login/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/OfferType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/OfferType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/deleteOffer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/deleteOffer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +80,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend" />
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src" />
+      <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend" />
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src\features\yoursalesannouncement" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.frontend">
+  <component name="RunManager" selected="npm.backend">
     <configuration name="backend" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -154,7 +158,10 @@
       <workItem from="1730402003870" duration="8517000" />
       <workItem from="1730455488979" duration="428000" />
       <workItem from="1730469258032" duration="16945000" />
-      <workItem from="1730486621612" duration="8219000" />
+      <workItem from="1730486621612" duration="8422000" />
+      <workItem from="1730562659151" duration="7328000" />
+      <workItem from="1730570373248" duration="1277000" />
+      <workItem from="1730571681652" duration="7118000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -244,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730410574311</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="+ singleoffer page, which shows offer depends on id, need to add email and number to the seller">
+      <option name="closed" value="true" />
+      <created>1730495267711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730495267712</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +292,7 @@
     <MESSAGE value="+front items, login, register, logout, ofert adding" />
     <MESSAGE value="+ deleting option" />
     <MESSAGE value="+ mantine style for making an offer etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ mantine style for making an offer etc" />
+    <MESSAGE value="+ singleoffer page, which shows offer depends on id, need to add email and number to the seller" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ singleoffer page, which shows offer depends on id, need to add email and number to the seller" />
   </component>
 </project>

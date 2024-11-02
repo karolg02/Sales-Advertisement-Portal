@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import {Body, Controller, Get, Param, ParseIntPipe, Post, UseGuards} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { plainToInstance } from 'class-transformer';
@@ -21,6 +21,13 @@ export class UserController {
     @UseGuards(TokenGuard)
     async me(@UserID() userId: number){
         const user = await this.userService.findOne(userId);
+        return plainToInstance(UserDto,user);
+    }
+
+    @Get('/get/:userId')
+    @UseGuards(TokenGuard)
+    async getUser(@Param("userId", ParseIntPipe) id: number){
+        const user = await this.userService.findOne(id);
         return plainToInstance(UserDto,user);
     }
 }

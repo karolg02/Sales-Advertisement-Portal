@@ -1,0 +1,7 @@
+.buttonCover{
+    color: white !important;
+}
+.buttonCover:hover{
+    color: orange !important;
+    transition-duration: 0.3s !important;
+}

@@ -12,6 +12,7 @@ import {
 } from "@tabler/icons-react";
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 import {useEffect, useState} from "react";
+import {Notifications} from "@mantine/notifications";
 
 export const Layout = () => {
     const [mobileOpened, { toggle: toggleMobile, close: closeMobile }] = useDisclosure();
@@ -26,6 +27,12 @@ export const Layout = () => {
         closeMobile();
         closeDesktop();
     }, [location.pathname]);
+
+    useEffect(() => {
+        return () => {
+            Notifications.clean();
+        };
+    }, [navigate]);
 
     const handleClick = () => {
         setIsRed(!isRed);
@@ -105,7 +112,12 @@ export const Layout = () => {
             </AppShell.Main>
             {showFooter && (
                 <AppShellFooter c="white" bd="0" bg="dark">
-                    tu bedzie podliczanie koszyka
+                    <Group justify="center" p="xs">
+                        Cała kwota: (kwota) PLN
+                        <Button variant="filled" bg="white" c="black" onClick={()=>Notifications.show({color: "green", title: "Sukces!", message: "Zakupiono przedmioty :)",autoClose: 4000, })}>
+                            Kupuję i płacę
+                        </Button>
+                    </Group>
                 </AppShellFooter>
             )}
         </AppShell>

@@ -14,7 +14,7 @@ export const MyOffers = () =>{
 
     return (
         <div style={{width: '100%'}}>
-            <Notifications style={{ position: 'fixed', bottom: 0, right: 0 }} />
+            <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
             {data.length === 0 ? (
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                     <Text size="lg">
@@ -23,7 +23,7 @@ export const MyOffers = () =>{
                 </div>
 
             ) : (
-                <SimpleGrid p="lg" ml="xl" mr="xl" cols={{base: 1, sm: 2, lg: 3}}>
+                <SimpleGrid p="xs" ml="xl" mr="xl"  cols={{base: 1, sm: 2, lg: 3}}>
                     {data.map((item) => <MyOffersList key={item.id} item={item}/>)}
                 </SimpleGrid>
             )}

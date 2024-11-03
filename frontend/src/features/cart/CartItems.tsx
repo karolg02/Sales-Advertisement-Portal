@@ -5,13 +5,13 @@ import {getOffer} from "../singleoffer/api/getOffer.ts";
 import {Button, Image, List, Loader, Paper, SimpleGrid, Text} from "@mantine/core";
 import {useNavigate} from "react-router-dom";
 import {deleteFromCart} from "./api/deletefromcart.ts";
-import {Notifications} from "@mantine/notifications";
 
 interface CartItemsProps {
     item: CartType
+    refreshCart: () => void;
 }
 
-export const CartItems = ({item}: CartItemsProps) => {
+export const CartItems = ({item, refreshCart }: CartItemsProps) => {
     const [offer, setData] = useState<OfferType | null>(null);
     const navigate = useNavigate();
 
@@ -40,7 +40,8 @@ export const CartItems = ({item}: CartItemsProps) => {
 
     const handleDelete =  async (ysaId: number) => {
         try{
-            return await deleteFromCart(ysaId);
+            await deleteFromCart(ysaId);
+            refreshCart();
         }catch (error) {
             console.error(error);
         }
@@ -52,15 +53,10 @@ export const CartItems = ({item}: CartItemsProps) => {
 
     return (
         <Paper m="lg" shadow="xl" radius="lg" >
-            <Notifications style={{ position: 'fixed', bottom: 30, right: 0 }} />
             <SimpleGrid cols={{base:1,sm:2,lg:3}}>
                 <Image
                     src={offer.image}
-                    mih="20vh"
-                    h="20vh"
-                    w="20vw"
-                    miw="20vh"
-                    fit="cover"
+                    fit="fill"
                     style={{borderBottomLeftRadius: "1em", borderTopLeftRadius: "1em", cursor: "pointer"}}
                     onClick={() => navigate(`/offer/${offer?.id}`)}
                 />

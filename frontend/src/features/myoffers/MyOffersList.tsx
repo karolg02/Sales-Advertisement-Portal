@@ -16,14 +16,15 @@ export const MyOffersList = ({ item }: OfferListItemProps) => {
     };
 
     return (
-        <Card shadow="sm" padding="lg" radius="lg" withBorder style={{ margin: '10px' }}>
+        <Card shadow="sm" padding="lg" radius="lg" withBorder>
             <Card.Section>
                 <Image
                     src={item.image}
                     radius="md"
                     mih="auto"
-                    h="58vh"
-                    fit='fill'
+                    h="60vh"
+                    fit='contain'
+                    p="lg"
                 />
             </Card.Section>
 

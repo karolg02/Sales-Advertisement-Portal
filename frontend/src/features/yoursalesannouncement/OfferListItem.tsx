@@ -18,7 +18,8 @@ export const OfferListItem = ({item}: OfferListItemProps) => {
                     radius="md"
                     mih="auto"
                     h="60vh"
-                    fit='fill'
+                    fit='contain'
+                    p="lg"
                 />
             </Card.Section>
 

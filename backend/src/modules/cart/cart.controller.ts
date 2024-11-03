@@ -26,19 +26,22 @@ export class CartController {
     @Post(":id")
     @UseGuards(TokenGuard)
     async addToCart(@Body() addCartDto: addCartDto,@Param("id", ParseIntPipe) id: number,@UserID() userid: number){
+        // czy istnieje
+        // czy to nie jest oferta tego samego uzytkownika
         const response = await this.ysaService.ysaGetById(id);
-        if(!response){
+        if(!response || response.userId===userid){
             throw new YsaNotfoundException();
         }
-        const response3 = await this.cartService.isInCart(id,userid);
-        if(response3.length>0){
+        // czy jest juz w koszyku
+        const response2 = await this.cartService.isInCart(id,userid);
+        if(response2.length>0){
             throw new InCart();
         }
-
-        const response2 = await this.ysaService.isAmountOkay(id,addCartDto.amount);
-        if(!response2){
+        // czy ilosc sie zgadza
+        if(response.amount<addCartDto.amount){
             throw new WrongAmount();
         }
+        // dodawanie do koszyka
         const response4 = this.cartService.addToCart(addCartDto,id, userid);
         return plainToInstance(ItemsDto, response4);
     }

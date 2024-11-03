@@ -77,11 +77,10 @@ export class YsaService {
         })
     }
     //for cart
-    isAmountOkay(id: number,amount: number) {
+    isAmountOkay(id: number) {
         return this.prisma.ysa.findUnique({
             where: {
                 id: id,
-                amount: amount,
             }
         })
     }

@@ -28,6 +28,7 @@ export const OfferForm = () => {
     const [uploadedUrls, setUploadedUrls] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+
     const handleDrop = async (files: File[]) => {
         const newUploadedUrls: string[] = [];
         for (const file of files) {
@@ -55,7 +56,7 @@ export const OfferForm = () => {
     return (
         <div>
             <Paper shadow="xs" p="xl" style={{ position: 'relative'}}>
-                <Notifications style={{ position: 'fixed', bottom: 0, right: 0 }} />
+                <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
                     <form onSubmit={form.onSubmit(handleSubmit)}>
                         <SimpleGrid ml="xl" mr="xl" cols={{base: 1, sm: 2, lg: 3}}>
 
@@ -89,6 +90,8 @@ export const OfferForm = () => {
                                                      withAsterisk
                                                      label="Cena"
                                                      placeholder="zł"
+                                                     allowNegative={false}
+                                                     min={1}
                                                      {...form.getInputProps('price')}
                                         />
 
@@ -97,6 +100,9 @@ export const OfferForm = () => {
                                                      withAsterisk
                                                      label="Ilość"
                                                      placeholder=""
+                                                     allowNegative={false}
+                                                     defaultValue="1"
+                                                     min={1}
                                                      {...form.getInputProps('amount')}
                                         />
 
@@ -121,7 +127,8 @@ export const OfferForm = () => {
                                                 radius="md"
                                                 mih="auto"
                                                 h="58vh"
-                                                fit='fill'
+                                                fit='contain'
+                                                p="lg"
                                             />
                                         )}
                                         {uploadedUrls.length == 0 && (

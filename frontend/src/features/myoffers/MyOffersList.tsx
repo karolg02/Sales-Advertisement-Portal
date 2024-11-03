@@ -2,7 +2,6 @@ import {Badge, Button, Card, Group, Image, Text} from '@mantine/core';
 import {OfferType} from "../../types/OfferType.ts";
 import {IconCategory, IconMapPin, IconRosetteDiscountCheck} from "@tabler/icons-react";
 import {deleteOffer} from "../yoursalesannouncement/api/deleteOffer.ts";
-import {Notifications} from "@mantine/notifications";
 
 interface OfferListItemProps {
     item: OfferType;
@@ -18,7 +17,6 @@ export const MyOffersList = ({ item }: OfferListItemProps) => {
 
     return (
         <Card shadow="sm" padding="lg" radius="lg" withBorder style={{ margin: '10px' }}>
-            <Notifications style={{ position: 'fixed', bottom: 0, right: 0 }} />
             <Card.Section>
                 <Image
                     src={item.image}

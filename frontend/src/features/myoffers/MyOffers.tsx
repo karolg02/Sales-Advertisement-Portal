@@ -3,6 +3,7 @@ import {OfferType} from "../../types/OfferType.ts";
 import {SimpleGrid,Text } from "@mantine/core";
 import {MyOffersList} from "./MyOffersList.tsx";
 import {ListMyOffers} from "./api/listMyOffers.ts";
+import {Notifications} from "@mantine/notifications";
 
 export const MyOffers = () =>{
     const [data, setData] = useState<OfferType[]>([]);
@@ -13,6 +14,7 @@ export const MyOffers = () =>{
 
     return (
         <div style={{width: '100%'}}>
+            <Notifications style={{ position: 'fixed', bottom: 0, right: 0 }} />
             {data.length === 0 ? (
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                     <Text size="lg">

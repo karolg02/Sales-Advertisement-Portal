@@ -7,9 +7,7 @@ export const deleteOffer = async (id: number) =>{
             method: 'DELETE',
             credentials: 'include',
         });
-        const data = await response.json();
-        //do poprawy powiadomienia
-        if (data.count===0) {
+        if (!response.ok) {
             Notifications.show({color: "red", title: "Niepowodzenie", message: "Niestety nie udało się usunąć oferty!",autoClose: 2000, });
         } else {
             Notifications.show({color: "green", title: "Sukces", message: "Pomyślnie usunięto oferte!",autoClose: 2000, });

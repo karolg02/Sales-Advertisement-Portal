@@ -7,7 +7,8 @@ export const deleteFromCart =async (ysaId: number) => {
             method: "DELETE",
             credentials: "include",
         })
-        if (!response.ok) {
+        const data = await response.json()
+        if (data.count!==0) {
             Notifications.show({color: "green", title: "Sukces!", message: "Pomyślnie usunięto z koszyka!",autoClose: 2000, });
         }else{
             Notifications.show({color: "red", title: "Niepowodzenie!", message: "Nie udało się usunąć oferty z koszyka!",autoClose: 2000, });

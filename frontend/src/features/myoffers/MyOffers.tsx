@@ -23,7 +23,7 @@ export const MyOffers = () =>{
                 </div>
 
             ) : (
-                <SimpleGrid p="xs" ml="xl" mr="xl"  cols={{base: 1, sm: 2, lg: 3}}>
+                <SimpleGrid p="lg" ml="xl" mr="xl"  cols={{base: 1, sm: 2, lg: 3}}>
                     {data.map((item) => <MyOffersList key={item.id} item={item}/>)}
                 </SimpleGrid>
             )}

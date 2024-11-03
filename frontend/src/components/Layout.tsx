@@ -1,4 +1,4 @@
-import {AppShell, AppShellFooter, Burger, Button, Group, Text} from "@mantine/core";
+import {AppShell, Burger, Button, Group, Text} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
@@ -20,7 +20,6 @@ export const Layout = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const showBurger = location.pathname === '/offers';
-    const showFooter = location.pathname === '/mycart';
     const [isRed, setIsRed] = useState(false);
 
     useEffect(() => {
@@ -110,16 +109,6 @@ export const Layout = () => {
             <AppShell.Main bg="rgba(225,219,219,0.8)">
                 <Outlet/>
             </AppShell.Main>
-            {showFooter && (
-                <AppShellFooter c="white" bd="0" bg="dark">
-                    <Group justify="center" p="xs">
-                        Cała kwota: (kwota) PLN
-                        <Button variant="filled" bg="white" c="black" onClick={()=>Notifications.show({color: "green", title: "Sukces!", message: "Zakupiono przedmioty :)",autoClose: 4000, })}>
-                            Kupuję i płacę
-                        </Button>
-                    </Group>
-                </AppShellFooter>
-            )}
         </AppShell>
     )
 }

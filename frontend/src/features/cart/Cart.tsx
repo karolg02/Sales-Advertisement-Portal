@@ -1,4 +1,4 @@
-import {List, Paper, Text} from "@mantine/core";
+import {List, Paper, ScrollArea, Text} from "@mantine/core";
 import {useEffect, useState} from "react";
 import {getCart} from "./api/getcart.ts";
 import {CartItems} from "./CartItems.tsx";
@@ -33,9 +33,11 @@ export const Cart = () => {
 
             ) : (
                 <Paper shadow="xl" p="lg" radius="lg" mt="lg" style={{ maxWidth: '70%', margin: ' auto' }}>
+                    <ScrollArea viewportProps={{style:{maxHeight: '80vh'}}}>
                     <List p="lg" ml="xl" mr="xl">
                         {data.map((item) => <CartItems key={item.ysaId} item={item} refreshCart={fetchCart}/>)}
                     </List>
+                    </ScrollArea>
                 </Paper>
             )}
         </div>

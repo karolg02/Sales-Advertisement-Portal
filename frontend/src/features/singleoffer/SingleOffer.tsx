@@ -47,7 +47,7 @@ export const SingleOffer = () => {
     }
 
     return (
-        <Paper shadow="xl" p="lg" mt="lg" style={{ maxWidth: '65%', margin: ' auto' }}>
+        <Paper radius="lg" shadow="xl" p="lg" mt="lg" style={{ maxWidth: '65%', margin: ' auto' }}>
             <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
             <SimpleGrid cols={{base:1,sm:2}}>
                 <Image

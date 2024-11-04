@@ -51,4 +51,14 @@ export class CartService {
             }
         })
     }
+
+    editCart(id: number, addCartDto: addCartDto, userid: number) {
+        return this.prisma.cart.updateMany({
+            where: {
+                ysaId: id,
+                userId: userid,
+            },
+            data: addCartDto,
+        })
+    }
 }

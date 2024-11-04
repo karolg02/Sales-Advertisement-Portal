@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseGuards} from '@nestjs/common';
 import {CartService} from "./cart.service";
 import {UserID} from "../auth/user.decorator";
 import {TokenGuard} from "../auth/token.guard";
@@ -55,5 +55,15 @@ export class CartController {
     @UseGuards(TokenGuard)
     async deleteAll(@UserID() userid: number) {
         return this.cartService.deleteAll(userid);
+    }
+
+    @Put(":id")
+    @UseGuards(TokenGuard)
+    async editCart(@Body() addCartDto: addCartDto,@Param("id", ParseIntPipe) id: number,@UserID() userid: number) {
+        const response = await this.ysaService.ysaGetById(id);
+        if(response.amount<addCartDto.amount || addCartDto.amount<=0){
+            throw new WrongAmount();
+        }
+        return this.cartService.editCart(id,addCartDto,userid);
     }
 }

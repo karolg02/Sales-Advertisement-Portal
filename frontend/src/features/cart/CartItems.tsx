@@ -5,6 +5,7 @@ import {getOffer} from "../singleoffer/api/getOffer.ts";
 import {Button, Image, List, Loader, Paper, SimpleGrid, Text} from "@mantine/core";
 import {useNavigate} from "react-router-dom";
 import {deleteFromCart} from "./api/deletefromcart.ts";
+import {editcart} from "./api/editcart.ts";
 
 interface CartItemsProps {
     item: CartType,
@@ -59,6 +60,18 @@ export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps)
         }
     }
 
+    const handleClick = async (id: number, amount: number) => {
+        try{
+            if(offer){
+                await editcart(id,amount);
+                refreshCart();
+            }
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
     if (!offer) {
         return <Loader/>;
     }
@@ -93,8 +106,9 @@ export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps)
                         <Text mx="sm">{quantity}</Text>
                         <Button onClick={increaseQuantity} variant="outline" color="yellow" c="black">+</Button>
                     </div>
-                    {quantity!=offer.amount && (
-                        <Button mt="xl" variant="outline" c="green" color="green" radius="md" style={{width:"80%", marginRight:"10%", marginLeft:"10%"}}>
+                    {quantity!=item.amount && (
+                        <Button onClick={()=>handleClick(item.ysaId,quantity)}
+                            mt="xl" variant="outline" c="green" color="green" radius="md" style={{width:"80%", marginRight:"10%", marginLeft:"10%"}}>
                             Zatwierdź zmiany
                         </Button>
                     )}

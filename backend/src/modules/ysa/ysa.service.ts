@@ -13,7 +13,10 @@ export class YsaService {
 
     async ysaListOffers(filter: FilterYsaDto) {
         return this.prisma.ysa.findMany({
-            where: filter.category ? { category: filter.category } : undefined,
+            where: {
+                category: filter.category || undefined,
+                title: filter.title ? { contains: filter.title} : undefined,
+            },
             orderBy: {
                 [filter.sortBy]: filter.sortOrder,
             },

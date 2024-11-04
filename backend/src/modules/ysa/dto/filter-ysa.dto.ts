@@ -12,4 +12,8 @@ export class FilterYsaDto {
     @IsOptional()
     @IsString()
     category?: string;
+
+    @IsOptional()
+    @IsString()
+    title?: string;
 }

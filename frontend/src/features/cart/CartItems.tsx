@@ -7,53 +7,65 @@ import {useNavigate} from "react-router-dom";
 import {deleteFromCart} from "./api/deletefromcart.ts";
 
 interface CartItemsProps {
-    item: CartType
-    refreshCart: () => void;
+    item: CartType,
+    refreshCart: () => void,
+    updateTotalPrice: (priceChange: number) => void
 }
 
-export const CartItems = ({item, refreshCart }: CartItemsProps) => {
+export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps) => {
     const [offer, setData] = useState<OfferType | null>(null);
     const navigate = useNavigate();
 
     const [quantity, setQuantity] = useState(item.amount);
 
     const increaseQuantity = () => {
-        setQuantity((prev) => prev + 1);
+        if (offer){
+            if (quantity + 1 <= offer.amount) {
+                setQuantity((prev) => prev + 1);
+                updateTotalPrice(+offer.price);
+            }
+        }
     };
 
     const decreaseQuantity = () => {
-        setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+        if (quantity - 1 >= 1) {
+            setQuantity((prev) => prev - 1);
+            if (offer) updateTotalPrice(-offer.price);
+        }
     };
 
     useEffect(() => {
         const fetch = async () => {
-            try{
+            try {
                 const response = await getOffer(item.ysaId);
                 setData(response);
-            }
-            catch (error) {
+                updateTotalPrice(response.price*item.amount/2);
+            } catch (error) {
                 console.error("Error fetching offer:", error);
             }
         };
         fetch();
-    },[])
+    }, [])
 
-    const handleDelete =  async (ysaId: number) => {
-        try{
+    const handleDelete = async (ysaId: number) => {
+        try {
+            if (offer) {
+                updateTotalPrice(-(offer.price * quantity));
+            }
             await deleteFromCart(ysaId);
             refreshCart();
-        }catch (error) {
+        } catch (error) {
             console.error(error);
         }
     }
 
     if (!offer) {
-        return <Loader />;
+        return <Loader/>;
     }
 
     return (
-        <Paper m="lg" shadow="xl" radius="lg" >
-            <SimpleGrid cols={{base:1,sm:2,lg:3}}>
+        <Paper m="lg" shadow="xl" radius="lg">
+            <SimpleGrid cols={{base: 1, sm: 2, lg: 3}}>
                 <Image
                     src={offer.image}
                     fit="fill"
@@ -68,18 +80,24 @@ export const CartItems = ({item, refreshCart }: CartItemsProps) => {
                         {offer.price} PLN
                     </Text>
                     <Text>
-                        Ilość: {item.amount}
+                        Ilość: {item.amount} z {offer.amount} dostępnych
                     </Text>
                 </List>
                 <List mt="xl" ml="lg" pt="lg">
-                    <Button mb="lg" fullWidth c="yellow" radius="md" bg="dark"
-                    onClick={() => handleDelete(item.ysaId)}
+                    <Button mb="xl" fullWidth c="yellow" radius="md" bg="dark"
+                            onClick={() => handleDelete(item.ysaId)}
+                            style={{width:"80%", marginRight:"10%", marginLeft:"10%"}}
                     >Usuń</Button>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: "center"}}>
                         <Button onClick={decreaseQuantity} variant="outline" color="yellow" c="black">-</Button>
                         <Text mx="sm">{quantity}</Text>
                         <Button onClick={increaseQuantity} variant="outline" color="yellow" c="black">+</Button>
                     </div>
+                    {quantity!=offer.amount && (
+                        <Button mt="xl" variant="outline" c="green" color="green" radius="md" style={{width:"80%", marginRight:"10%", marginLeft:"10%"}}>
+                            Zatwierdź zmiany
+                        </Button>
+                    )}
                 </List>
             </SimpleGrid>
         </Paper>

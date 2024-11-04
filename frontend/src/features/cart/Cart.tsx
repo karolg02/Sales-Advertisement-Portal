@@ -1,12 +1,14 @@
-import {List, Paper, ScrollArea, Text} from "@mantine/core";
+import {Button, Group, List, Paper, ScrollArea, Text} from "@mantine/core";
 import {useEffect, useState} from "react";
 import {getCart} from "./api/getcart.ts";
 import {CartItems} from "./CartItems.tsx";
 import {CartType} from "../../types/CartType.ts";
 import {Notifications} from "@mantine/notifications";
+import {IconCash} from "@tabler/icons-react";
 
 export const Cart = () => {
     const [data, setData] = useState<CartType[]>([]);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const fetchCart = async () => {
         try {
@@ -16,6 +18,10 @@ export const Cart = () => {
             console.error("Error fetching offer:", error);
         }
     };
+
+    const updateTotalPrice = (priceChange: number) => {
+        setTotalPrice((prevTotal)=> prevTotal + priceChange);
+    }
 
     useEffect(() => {
         fetchCart();
@@ -32,13 +38,21 @@ export const Cart = () => {
                 </div>
 
             ) : (
-                <Paper shadow="xl" p="lg" radius="lg" mt="lg" style={{ maxWidth: '70%', margin: ' auto' }}>
-                    <ScrollArea viewportProps={{style:{maxHeight: '80vh'}}}>
-                    <List p="lg" ml="xl" mr="xl">
-                        {data.map((item) => <CartItems key={item.ysaId} item={item} refreshCart={fetchCart}/>)}
-                    </List>
-                    </ScrollArea>
-                </Paper>
+                <>
+                    <Paper shadow="xl" p="lg" radius="lg" mt="lg" style={{ maxWidth: '70%', margin: ' auto' }}>
+                        <ScrollArea viewportProps={{style:{maxHeight: '80vh'}}}>
+                        <List p="lg" ml="xl" mr="xl">
+                            {data.map((item) => <CartItems key={item.ysaId} item={item} refreshCart={fetchCart} updateTotalPrice={updateTotalPrice}/>)}
+                        </List>
+                        </ScrollArea>
+                    </Paper>
+                    <Group pos="fixed" p="xs" left="0" bottom="0" w="100%" justify="center" bg="dark">
+                        <Text c="white" size="lg">Całkowita cena: {totalPrice} PLN </Text>
+                        <Button variant="outline" className="buttonCover" color="white"
+                        onClick={()=>Notifications.show({color: "green", title: "Sukces", message: "Udało się zrealizować płatność!",autoClose: 4000, })}
+                        >Kupuję i płacę <IconCash style={{marginLeft:"4", color:"orange"}}/></Button>
+                    </Group>
+                </>
             )}
         </div>
     )

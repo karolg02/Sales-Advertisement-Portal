@@ -10,6 +10,7 @@ export const OfferList = () =>{
     useEffect(() => {
         listOffer().then((response) => setData(response));
     })
+    
 
     return (
         <div>

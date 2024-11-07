@@ -1,4 +1,4 @@
-import {ScrollArea, SimpleGrid} from "@mantine/core";
+import {Button, ScrollArea, SimpleGrid} from "@mantine/core";
 import {OfferListItem} from "./OfferListItem.tsx";
 import {useEffect, useState} from "react";
 import {OfferType} from "../../types/OfferType.ts";
@@ -12,10 +12,11 @@ export const OfferList = () => {
     const [selectedCategory] = useAtom(categoryAtom);
     const [lowerPrice] = useAtom(lowerPriceAtom);
     const [upperPrice] = useAtom(upperPriceAtom);
+    const [page, setPage] = useState<number>(1);
 
     useEffect(() => {
-        listOffer().then((response) => setData(response));
-    },[search, selectedCategory, lowerPrice, upperPrice]);
+        listOffer({}, page).then((response) => setData(response));
+    },[search, selectedCategory, lowerPrice, upperPrice, page]);
 
     const filteredData = data.filter((item) => {
         const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase());
@@ -26,6 +27,10 @@ export const OfferList = () => {
         return matchesSearch && matchesCategory && matchesLowerPrice && matchesUpperPrice;
     });
 
+    const handleLoadMore = () => {
+        setPage((prevPage) => prevPage + 1);
+    };
+
     return (
         <div>
             <ScrollArea h="92vh">
@@ -34,6 +39,15 @@ export const OfferList = () => {
                         <OfferListItem key={item.id} item={item} />
                     ))}
                 </SimpleGrid>
+                {filteredData.length>50 && (
+                    <Button
+                        bg="dark"
+                        variant="outline"
+                        color="white"
+                        onClick={handleLoadMore}
+                        fullWidth>Wczytaj więcej pozycji
+                    </Button>
+                )}
             </ScrollArea>
         </div>
     );

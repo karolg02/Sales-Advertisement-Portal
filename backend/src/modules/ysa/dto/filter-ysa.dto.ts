@@ -27,4 +27,9 @@ export class FilterYsaDto {
     @Transform(({ value }) => parseFloat(value))
     @IsNumber()
     upperPrice?: number;
+
+    @IsOptional()
+    @Transform(({ value }) => parseFloat(value))
+    @IsNumber()
+    page?: number;
 }

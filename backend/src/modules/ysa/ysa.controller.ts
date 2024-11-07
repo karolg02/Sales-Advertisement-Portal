@@ -29,7 +29,7 @@ export class YsaController {
 
     @Get()
     @UseGuards(TokenGuard)
-    ysaListOffer(@Query() filter: FilterYsaDto){
+    ysaListOffer(@Query() filter: FilterYsaDto) {
         return this.ysaService.ysaListOffers(filter);
     }
 

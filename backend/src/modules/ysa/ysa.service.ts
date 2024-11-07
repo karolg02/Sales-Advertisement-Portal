@@ -12,6 +12,9 @@ export class YsaService {
     }
 
     async ysaListOffers(filter: FilterYsaDto) {
+        const page = filter.page || 1;
+        const take = 50; // ustawione na 50 elementow na strone
+        const skip = (page - 1) * take;
         return this.prisma.ysa.findMany({
             where: {
                 category: filter.category || undefined,
@@ -24,6 +27,8 @@ export class YsaService {
             orderBy: {
                 [filter.sortBy]: filter.sortOrder,
             },
+            skip: skip,
+            take: take,
         });
     }
 
@@ -80,14 +85,6 @@ export class YsaService {
         return this.prisma.ysa.findMany({
             where: {
                 userId: userid
-            }
-        })
-    }
-    //for cart
-    isAmountOkay(id: number) {
-        return this.prisma.ysa.findUnique({
-            where: {
-                id: id,
             }
         })
     }

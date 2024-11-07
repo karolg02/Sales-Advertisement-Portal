@@ -25,6 +25,7 @@ export const AppNavbar = () => {
             <Group justify="center" pt="sm">
                 <IconZoom style={{color: "orange"}}/>
                 <TextInput
+                    mt="xs"
                     placeholder="Wyszukaj po nazwie"
                     value={search}
                     onChange={(event) => setSearch(event.currentTarget.value)}

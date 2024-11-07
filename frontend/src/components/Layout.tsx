@@ -1,4 +1,4 @@
-import {AppShell, Burger, Button, Group, Text} from "@mantine/core";
+import {AppShell, Avatar, Burger, Button, Group, Popover, Text} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {AppNavbar} from "./AppNavbar.tsx";
@@ -7,8 +7,7 @@ import {
     IconDoorExit,
     IconHome,
     IconPencilPlus,
-    IconShoppingBag,
-    IconWallpaper
+    IconShoppingBag, IconWallpaper,
 } from "@tabler/icons-react";
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 import {useEffect, useState} from "react";
@@ -94,11 +93,23 @@ export const Layout = () => {
                                 Moje oferty <IconWallpaper style={{ marginLeft: 4, color:"orange"  }}/>
                             </Button>
                             <Button className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
-                                Twój koszyk <IconShoppingBag style={{ marginLeft: 4, color:"orange"  }} />
+                                Koszyk<IconShoppingBag style={{ marginLeft: 4, color:"orange"  }} />
                             </Button>
-                            <Button className="buttonCover" variant="transparent" onClick={handleLogout}>
-                                Wyloguj <IconDoorExit style={{ marginLeft: 4, color:"orange"  }}/>
-                            </Button>
+                            <Popover position="bottom" withArrow shadow="md">
+                                <Popover.Target>
+                                    <Button className="buttonCover" variant="transparent">
+                                        Konto<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
+                                    </Button>
+                                </Popover.Target>
+                                <Popover.Dropdown style={{backgroundColor:"rgb(45,42,42)"}}>
+                                    <Button className="buttonCover" variant="transparent" onClick={() => navigate('/profile')}>
+                                        Mój profil<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
+                                    </Button>
+                                    <Button className="buttonCover" variant="transparent" onClick={handleLogout}>
+                                        Wyloguj <IconDoorExit style={{ marginLeft: 4, color:"orange"  }}/>
+                                    </Button>
+                                </Popover.Dropdown>
+                            </Popover>
                         </Group>
                     </Group>
                 </Group>

@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ taking 50 offers from database per page">
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received">
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferEdit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/edit-offer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +66,7 @@
     &quot;npm.frontend.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
     &quot;npm.start:debug.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -157,7 +165,9 @@
       <workItem from="1730893170638" duration="3757000" />
       <workItem from="1730926378951" duration="1152000" />
       <workItem from="1730927566067" duration="11094000" />
-      <workItem from="1730971838530" duration="2242000" />
+      <workItem from="1730971838530" duration="2437000" />
+      <workItem from="1730992574299" duration="5220000" />
+      <workItem from="1731002834745" duration="10439000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -327,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730942035068</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received">
+      <option name="closed" value="true" />
+      <created>1730975769254</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730975769254</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +387,7 @@
     <MESSAGE value="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)" />
     <MESSAGE value="+ name search, price search, category search" />
     <MESSAGE value="+ taking 50 offers from database per page" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ taking 50 offers from database per page" />
+    <MESSAGE value="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received" />
   </component>
 </project>

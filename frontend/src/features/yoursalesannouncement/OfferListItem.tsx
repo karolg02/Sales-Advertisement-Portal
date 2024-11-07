@@ -1,6 +1,6 @@
-import {Badge, Button, Card, Group, Image, Text} from '@mantine/core';
+import {Button, Card, Group, Image, Text} from '@mantine/core';
 import {OfferType} from "../../types/OfferType.ts";
-import {IconCategory, IconMapPin, IconRosetteDiscountCheck} from "@tabler/icons-react";
+import {IconCategory, IconMapPin} from "@tabler/icons-react";
 import {useNavigate} from "react-router-dom";
 import "../../style.css"
 
@@ -24,16 +24,11 @@ export const OfferListItem = ({item}: OfferListItemProps) => {
             </Card.Section>
 
 
-            <Group justify="space-between" mt="md" mb="xs">
-                <Text fw={500}>{item.title}</Text>
-                <Badge style={{paddingTop: '1.2em', paddingBottom: '1em'}}
-                       color="yellow"
-                       variant="transparent"
-                >
-                    <IconRosetteDiscountCheck/></Badge>
+            <Group justify="space-between" mt="md" mb="xs" >
+                <Text fw={500} lineClamp={1}>{item.title}</Text>
             </Group>
 
-            <Text size="sm" c="dimmed" mih="4em" mah="4em" lineClamp={2}>
+            <Text size="sm" c="dimmed" mih="3em" mah="3em" lineClamp={2}>
                 {item.description}
             </Text>
 

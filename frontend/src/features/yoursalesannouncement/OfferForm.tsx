@@ -67,7 +67,8 @@ export const OfferForm = () => {
                                         <Text fw="bold" size="lg">Wypełnij formularz</Text>
                                     </Group>
 
-                                    <TextInput
+                                    <Textarea
+                                        autosize
                                         withAsterisk
                                         label="Tytuł"
                                         placeholder="tytuł"

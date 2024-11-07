@@ -81,7 +81,8 @@ export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps)
             <SimpleGrid cols={{base: 1, sm: 2, lg: 3}}>
                 <Image
                     src={offer.image}
-                    fit="fill"
+                    fit="contain"
+                    h="20em"
                     style={{borderBottomLeftRadius: "1em", borderTopLeftRadius: "1em", cursor: "pointer"}}
                     onClick={() => navigate(`/offer/${offer?.id}`)}
                 />

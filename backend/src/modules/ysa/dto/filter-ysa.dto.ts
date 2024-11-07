@@ -1,4 +1,5 @@
-import {IsEnum, IsOptional, IsString} from "class-validator";
+import {IsEnum, IsNumber, IsOptional, IsString} from "class-validator";
+import {Transform} from "class-transformer";
 
 export class FilterYsaDto {
     @IsOptional()
@@ -16,4 +17,14 @@ export class FilterYsaDto {
     @IsOptional()
     @IsString()
     title?: string;
+
+    @IsOptional()
+    @Transform(({ value }) => parseFloat(value))
+    @IsNumber()
+    lowerPrice?: number;
+
+    @IsOptional()
+    @Transform(({ value }) => parseFloat(value))
+    @IsNumber()
+    upperPrice?: number;
 }

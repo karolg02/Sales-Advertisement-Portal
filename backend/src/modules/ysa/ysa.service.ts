@@ -16,6 +16,10 @@ export class YsaService {
             where: {
                 category: filter.category || undefined,
                 title: filter.title ? { contains: filter.title} : undefined,
+                price: {
+                    gte: filter.lowerPrice || undefined,
+                    lte: filter.upperPrice || undefined,
+                }
             },
             orderBy: {
                 [filter.sortBy]: filter.sortOrder,

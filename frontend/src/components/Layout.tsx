@@ -82,7 +82,7 @@ export const Layout = () => {
                     <Text c="white" size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right", marginLeft: 4}}>
                         YourSaleAnnouncement
                     </Text>
-                    <Group justify="end" style={{ flex: 1}}>
+                    <Group justify="end" style={{ flex: "1"}}>
                         <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>
                             <Button className="buttonCover" variant="transparent" onClick={() => navigate('/offers')}>
                                 Przeglądaj oferty <IconHome style={{ marginLeft: 4, color:"orange" }}/>

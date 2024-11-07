@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ price check on cart, edit cart (have to add put method in cart backend)">
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/api/editcart.ts" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/cart/cart.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/filter-ysa.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/offer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +156,14 @@
       <workItem from="1730571681652" duration="7202000" />
       <workItem from="1730640020845" duration="17841000" />
       <workItem from="1730674718147" duration="3680000" />
-      <workItem from="1730752696071" duration="8183000" />
+      <workItem from="1730752696071" duration="8304000" />
+      <workItem from="1730802656895" duration="30000" />
+      <workItem from="1730812968094" duration="652000" />
+      <workItem from="1730813766660" duration="8000" />
+      <workItem from="1730833782575" duration="563000" />
+      <workItem from="1730893170638" duration="3757000" />
+      <workItem from="1730926378951" duration="1152000" />
+      <workItem from="1730927566067" duration="7609000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -293,7 +301,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730678459611</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)">
+      <option name="closed" value="true" />
+      <created>1730761002705</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730761002705</updated>
+    </task>
+    <task id="LOCAL-00019" summary="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)">
+      <option name="closed" value="true" />
+      <created>1730802669221</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730802669221</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +356,7 @@
     <MESSAGE value="+ styling and some features" />
     <MESSAGE value="- footer, + scrollarea" />
     <MESSAGE value="+ price check on cart, edit cart (have to add put method in cart backend)" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ price check on cart, edit cart (have to add put method in cart backend)" />
+    <MESSAGE value="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ cart edit, backend title search (planned: frontend search, editing an offer, deleting all cart)" />
   </component>
 </project>

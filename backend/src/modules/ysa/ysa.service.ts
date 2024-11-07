@@ -13,7 +13,7 @@ export class YsaService {
 
     async ysaListOffers(filter: FilterYsaDto) {
         const page = filter.page || 1;
-        const take = 50; // ustawione na 50 elementow na strone
+        const take = 30; // ile elementow ma pobrac
         const skip = (page - 1) * take;
         return this.prisma.ysa.findMany({
             where: {

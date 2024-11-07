@@ -14,18 +14,28 @@ export const OfferList = () => {
     const [upperPrice] = useAtom(upperPriceAtom);
     const [page, setPage] = useState<number>(1);
 
+    const fetchOffers = (newPage = 1) => {
+        const filters: Record<string, any> = {};
+        if (search) filters.title = search;
+        if (selectedCategory) filters.category = selectedCategory;
+        if (lowerPrice != null) filters.lowerPrice = lowerPrice;
+        if (upperPrice != null) filters.upperPrice = upperPrice;
+
+        if (newPage === 1) setData([]);
+
+        listOffer(filters, newPage).then((response) => {
+            setData(prevData => newPage === 1 ? response : [...prevData, ...response]);
+        });
+    };
+
     useEffect(() => {
-        listOffer({}, page).then((response) => setData(response));
-    },[search, selectedCategory, lowerPrice, upperPrice, page]);
+        setPage(1);
+        fetchOffers(1);
+    }, [search, selectedCategory, lowerPrice, upperPrice]);
 
-    const filteredData = data.filter((item) => {
-        const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase());
-        const matchesCategory = selectedCategory ? item.category === selectedCategory : true;
-        const matchesLowerPrice = lowerPrice !== null ? item.price >= lowerPrice : true;
-        const matchesUpperPrice = upperPrice !== null ? item.price <= upperPrice : true;
-
-        return matchesSearch && matchesCategory && matchesLowerPrice && matchesUpperPrice;
-    });
+    useEffect(() => {
+        if (page > 1) fetchOffers(page);
+    }, [page]);
 
     const handleLoadMore = () => {
         setPage((prevPage) => prevPage + 1);
@@ -34,21 +44,24 @@ export const OfferList = () => {
     return (
         <div>
             <ScrollArea h="92vh">
-                <SimpleGrid p="lg" ml="xl" mr="xl" cols={{base:1,sm:2,lg:3}}>
-                    {filteredData.map((item) => (
+                <SimpleGrid p="lg" ml="xl" mr="xl" cols={{ base: 1, sm: 2, lg: 3 }}>
+                    {data.map((item) => (
                         <OfferListItem key={item.id} item={item} />
                     ))}
                 </SimpleGrid>
-                {filteredData.length>50 && (
+                {data.length==30*page && (
                     <Button
                         bg="dark"
                         variant="outline"
                         color="white"
                         onClick={handleLoadMore}
-                        fullWidth>Wczytaj więcej pozycji
+                        fullWidth
+                    >
+                        Wczytaj więcej pozycji
                     </Button>
                 )}
             </ScrollArea>
         </div>
     );
+
 };

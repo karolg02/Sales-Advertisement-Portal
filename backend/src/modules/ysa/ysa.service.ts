@@ -56,13 +56,23 @@ export class YsaService {
         })
     }
 
-    ysaDeleteOffer(id: number, userid: number){
-        return this.prisma.ysa.delete({
-            where: {
-                id: id,
-                userId: userid,
-            }
-        })
+    async ysaDeleteOffer(id: number, userid: number) {
+        try {
+            await this.prisma.cart.deleteMany({
+                where: {
+                    ysaId: id,
+                },
+            });
+
+            return await this.prisma.ysa.delete({
+                where: {
+                    id: id,
+                    userId: userid,
+                },
+            });
+        } catch (error) {
+            throw new Error(`Nie udało się usunąć oferty. Szczegóły błędu: ${error.message}`);
+        }
     }
 
     ysaGetById(id: number) {

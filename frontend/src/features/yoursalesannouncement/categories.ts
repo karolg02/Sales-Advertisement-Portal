@@ -14,4 +14,5 @@ export const categories = [
     { value: 'Kolekcje/sztuka', label: 'Kolekcje i sztuka' },
     { value: 'Firma/uslugi', label: 'Firma i usługi' },
     { value: 'Inne', label: 'Inne' },
+    { value: 'Oddam', label: 'Oddam za darmo' },
 ]

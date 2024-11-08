@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received">
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferEdit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/edit-offer.ts" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ edit offer, popover">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffersList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +72,7 @@
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src\features\yoursalesannouncement" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.frontend">
+  <component name="RunManager" selected="npm.backend">
     <configuration name="backend" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -167,7 +161,8 @@
       <workItem from="1730927566067" duration="11094000" />
       <workItem from="1730971838530" duration="2437000" />
       <workItem from="1730992574299" duration="5220000" />
-      <workItem from="1731002834745" duration="10439000" />
+      <workItem from="1731002834745" duration="10604000" />
+      <workItem from="1731100145460" duration="2152000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -345,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730975769254</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="+ edit offer, popover">
+      <option name="closed" value="true" />
+      <created>1731013591743</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731013591743</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +391,7 @@
     <MESSAGE value="+ name search, price search, category search" />
     <MESSAGE value="+ taking 50 offers from database per page" />
     <MESSAGE value="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed to 30 offers per page, also now filtering changes the request, instead of changing the offer that were received" />
+    <MESSAGE value="+ edit offer, popover" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ edit offer, popover" />
   </component>
 </project>

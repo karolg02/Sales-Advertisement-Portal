@@ -102,7 +102,7 @@ export const Layout = () => {
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{backgroundColor:"rgb(45,42,42)"}}>
-                                    <Button className="buttonCover" variant="transparent" onClick={() => navigate('/profile')}>
+                                    <Button className="buttonCover" variant="transparent" onClick={() => navigate('/myprofile')}>
                                         Mój profil<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
                                     </Button>
                                     <Button className="buttonCover" variant="transparent" onClick={handleLogout}>

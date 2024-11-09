@@ -26,6 +26,14 @@ model ysa {
   user        User     @relation(fields: [userId], references: [id])
   userId      Int
   cart        Cart[] // tu tworze relacje z Cart i daje swoje id
+  photos      Photos[]
+}
+
+model Photos {
+  id    Int    @id @default(autoincrement())
+  url   String
+  ysa   ysa?   @relation(fields: [ysaId], references: [id])
+  ysaId Int?
 }
 
 model User {

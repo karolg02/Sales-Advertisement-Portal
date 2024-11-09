@@ -3,6 +3,7 @@ import {CreateYsaDto} from "./dto/create-ysa.dto";
 import {PrismaService} from "../prisma/prisma.service";
 import {EditYsaDto} from "./dto/edit-ysa.dto";
 import {FilterYsaDto} from "./dto/filter-ysa.dto";
+import {postPhoto} from "./dto/postPhoto.dto";
 
 @Injectable()
 export class YsaService {
@@ -32,8 +33,8 @@ export class YsaService {
         });
     }
 
-    async ysaAddOffer(data: CreateYsaDto, userid: number){
-        return this.prisma.ysa.create({
+    async ysaAddOffer(data: CreateYsaDto, userId: number) {
+        const newOffer = await this.prisma.ysa.create({
             data: {
                 title: data.title,
                 description: data.description,
@@ -42,9 +43,10 @@ export class YsaService {
                 amount: data.amount,
                 category: data.category,
                 city: data.city,
-                userId: userid,
+                userId: userId,
             },
         });
+        return { id: newOffer.id };
     }
 
     ysaEditOffer(id: number, data: EditYsaDto){
@@ -95,6 +97,23 @@ export class YsaService {
         return this.prisma.ysa.findMany({
             where: {
                 userId: userid
+            }
+        })
+    }
+
+    async getPhotos(id: number) {
+        return this.prisma.photos.findMany({
+            where: {
+                ysaId: id,
+            }
+        })
+    }
+
+    postPhotos(id: number, data: postPhoto) {
+        return this.prisma.photos.create({
+            data: {
+                ysaId: id,
+                url: data.url,
             }
         })
     }

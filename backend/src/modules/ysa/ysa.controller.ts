@@ -19,6 +19,7 @@ import {EditYsaDto} from "./dto/edit-ysa.dto";
 import {FilterYsaDto} from "./dto/filter-ysa.dto";
 import {TokenGuard} from "../auth/token.guard";
 import {UserID} from "../auth/user.decorator";
+import {postPhoto} from "./dto/postPhoto.dto";
 
 @Controller('ysa')
 export class YsaController {
@@ -29,7 +30,7 @@ export class YsaController {
 
     @Get()
     @UseGuards(TokenGuard)
-    ysaListOffer(@Query() filter: FilterYsaDto) {
+    async ysaListOffer(@Query() filter: FilterYsaDto) {
         return this.ysaService.ysaListOffers(filter);
     }
 
@@ -52,7 +53,7 @@ export class YsaController {
 
     @Post()
     @UseGuards(TokenGuard)
-    ysaAddOffer(@Body()data: CreateYsaDto,@UserID() userid: number){
+    async ysaAddOffer(@Body()data: CreateYsaDto,@UserID() userid: number){
         return this.ysaService.ysaAddOffer(data,userid);
     }
 
@@ -76,4 +77,17 @@ export class YsaController {
         }
         return this.ysaService.ysaEditOffer(id,data);
     }
+
+    @Get("/photos/:id")
+    @UseGuards(TokenGuard)
+    async getPhotos(@Param("id", ParseIntPipe) id: number){
+        return this.ysaService.getPhotos(id);
+    }
+
+    @Post("/photos/:id")
+    @UseGuards(TokenGuard)
+    async postPhotos(@Param("id", ParseIntPipe) id: number,@Body() data: postPhoto) {
+        return this.ysaService.postPhotos(id, data);
+    }
+
 }

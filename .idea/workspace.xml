@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ edit offer, popover">
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/postPhoto.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/postphoto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/dev.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/dto/create-ysa.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/ysa/ysa.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/api/create-offer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2c495b7da31a4cc07befd70c43dd0578e1f17969" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -72,7 +86,7 @@
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src\features\yoursalesannouncement" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.backend">
+  <component name="RunManager" selected="npm.frontend">
     <configuration name="backend" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -163,6 +177,10 @@
       <workItem from="1730992574299" duration="5220000" />
       <workItem from="1731002834745" duration="10604000" />
       <workItem from="1731100145460" duration="2152000" />
+      <workItem from="1731109094111" duration="1000" />
+      <workItem from="1731160323733" duration="1129000" />
+      <workItem from="1731183313205" duration="9606000" />
+      <workItem from="1731193186192" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

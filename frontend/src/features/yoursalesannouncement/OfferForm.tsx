@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {
-    Badge,
+    Badge, Box,
     Button,
     Card,
     Grid,
@@ -22,16 +22,20 @@ import {uploadToAzure} from "./azureUploader.ts";
 import {categories} from "./categories.ts";
 import {OfferTypeValues} from "../../types/OfferTypeValues.ts";
 import {createOffer} from "./api/create-offer.ts";
+import {postPhoto} from "./api/postphoto.ts";
 
 export const OfferForm = () => {
     const form = useOfferForm();
     const [uploadedUrls, setUploadedUrls] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const handleDrop = async (files: File[]) => {
+        const remainingSlots = 5 - uploadedUrls.length;
+        const filesToUpload = files.slice(0, remainingSlots);
+
         const newUploadedUrls: string[] = [];
-        for (const file of files) {
+        for (const file of filesToUpload) {
             const url = await uploadToAzure(file);
             if (url) {
                 newUploadedUrls.push(url);
@@ -39,19 +43,33 @@ export const OfferForm = () => {
         }
         setUploadedUrls((prevUrls) => [...prevUrls, ...newUploadedUrls]);
 
-        if (newUploadedUrls.length > 0) {
+        if (newUploadedUrls.length > 0 && !selectedImage) {
+            setSelectedImage(newUploadedUrls[0]);
             form.setFieldValue("image", newUploadedUrls[0]);
         }
     };
 
+    const handleSelectImage = (url: string) => {
+        setSelectedImage(url);
+        form.setFieldValue("image", url);
+    };
+
     const handleSubmit = async (vals: OfferTypeValues) => {
-        try{
-            await createOffer(vals);
+        try {
+            const offer = await createOffer(vals);
+            const offerId = offer?.id;
+
+            await Promise.all(
+                uploadedUrls.map(async (url) => {
+                    await postPhoto(offerId, url);
+                })
+            );
+
+            console.log("Oferta i zdjęcia zostały zapisane pomyślnie!");
+        } catch (error) {
+            console.error("Błąd podczas zapisywania oferty lub zdjęć:", error);
         }
-        catch (error) {
-            console.error(error);
-        }
-    }
+    };
 
     return (
         <div>
@@ -116,6 +134,26 @@ export const OfferForm = () => {
                                         />
                                     </Grid>
 
+                                    <Group mt="md" gap="xs">
+                                        {uploadedUrls.map((url, index) => (
+                                            <Box
+                                                key={index}
+                                                style={{
+                                                    width: 100,
+                                                    height: 100,
+                                                    border: url === selectedImage ? '2px solid orange' : '1px solid grey',
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center'
+                                                }}
+                                                onClick={() => handleSelectImage(url)}
+                                            >
+                                                <Image src={url} width={100} height={100} fit="cover" />
+                                            </Box>
+                                        ))}
+                                    </Group>
+
                                 </Group>
                             </div>
 
@@ -124,7 +162,7 @@ export const OfferForm = () => {
                                     <Card.Section>
                                         {uploadedUrls.length > 0 && (
                                             <Image
-                                                src={uploadedUrls[0]}
+                                                src={selectedImage}
                                                 radius="md"
                                                 mih="auto"
                                                 h="58vh"

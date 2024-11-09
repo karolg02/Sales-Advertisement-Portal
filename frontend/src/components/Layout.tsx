@@ -95,7 +95,7 @@ export const Layout = () => {
                             <Button className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
                                 Koszyk<IconShoppingBag style={{ marginLeft: 4, color:"orange"  }} />
                             </Button>
-                            <Popover position="bottom" withArrow shadow="md">
+                            <Popover radius="lg" position="bottom" shadow="md" withArrow>
                                 <Popover.Target>
                                     <Button className="buttonCover" variant="transparent">
                                         Konto<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>

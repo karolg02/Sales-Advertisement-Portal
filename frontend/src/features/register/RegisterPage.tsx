@@ -39,7 +39,7 @@ export const RegisterPage = () => {
     return (
         <div
             style={{
-                backgroundColor: 'rgb(236,236,236)'
+                backgroundColor: 'rgb(27,27,27)'
             }}
         >
             <Container
@@ -51,11 +51,20 @@ export const RegisterPage = () => {
                             size="xl"
                             fw={900}
                             variant="gradient"
-                            gradient={{from: 'red', to: 'green', deg: 30}}
+                            gradient={{ from: 'brown', to: 'dark', deg: 0 }}
                             mb="lg"
-                            style={{textAlign: 'center'}}
+                            style={{ textAlign: 'center' }}>
+                            YourSaleAnnouncement
+                        </Text>
+                        <Text
+                            size="xl"
+                            fw={900}
+                            variant="gradient"
+                            gradient={{ from: 'brown', to: 'dark', deg: 0 }}
+                            mb="lg"
+                            style={{ textAlign: 'center' }}
                         >
-                            Witaj w panelu rejestracji YourTodo!
+                            Witaj w panelu rejestracji!
                         </Text>
                         <form onSubmit={form.onSubmit(values => handleSubmit(values))}>
                             <Stack style={{minWidth: "20vW"}}>
@@ -85,6 +94,7 @@ export const RegisterPage = () => {
                                     {...form.getInputProps('password')}
                                 />
                                 <NumberInput
+                                    hideControls
                                     required
                                     type='tel'
                                     label="number"
@@ -93,7 +103,7 @@ export const RegisterPage = () => {
                                 />
                                 <Button
                                     variant="gradient"
-                                    gradient={{from: 'red', to: 'green', deg: 90}}
+                                    gradient={{ from: 'orange', to: 'dark', deg: 0 }}
                                     type="submit"
                                     fullWidth
                                 >
@@ -105,7 +115,7 @@ export const RegisterPage = () => {
                                 </Stack>
                                 <Button
                                     variant="gradient"
-                                    gradient={{from: 'blue', to: 'green', deg: 270}}
+                                    gradient={{ from: 'red', to: 'dark', deg: 0 }}
                                     onClick={() => handleLoginButton()}
                                     fullWidth
                                 >

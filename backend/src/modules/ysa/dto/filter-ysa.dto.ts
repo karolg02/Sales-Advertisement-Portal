@@ -32,4 +32,8 @@ export class FilterYsaDto {
     @Transform(({ value }) => parseFloat(value))
     @IsNumber()
     page?: number;
+
+    @IsOptional()
+    @IsString()
+    city?: string;
 }

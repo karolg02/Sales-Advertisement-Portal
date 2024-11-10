@@ -132,23 +132,28 @@ export const OfferForm = () => {
                                         />
                                     </Grid>
 
-                                    <Group mt="md" gap="xs">
+                                    {uploadedUrls.length>0 &&(
+                                        <Text>Wybierz zdjęcie na okładkę:</Text>
+                                    )}
+                                    <Group gap="xs">
                                         {uploadedUrls.map((url, index) => (
-                                            <Box
-                                                key={index}
-                                                style={{
-                                                    width: 100,
-                                                    height: 100,
-                                                    border: url === selectedImage ? '2px solid orange' : '1px solid grey',
-                                                    cursor: 'pointer',
-                                                    display: 'flex',
-                                                    justifyContent: 'center',
-                                                    alignItems: 'center'
-                                                }}
-                                                onClick={() => handleSelectImage(url)}
-                                            >
-                                                <Image src={url} width={100} height={100} fit="cover" />
-                                            </Box>
+                                            <>
+                                                <Box
+                                                    key={index}
+                                                    style={{
+                                                        width: 100,
+                                                        height: 100,
+                                                        border: url === selectedImage ? '2px solid orange' : '1px solid grey',
+                                                        cursor: 'pointer',
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center'
+                                                    }}
+                                                    onClick={() => handleSelectImage(url)}
+                                                >
+                                                    <Image src={url} width={100} height={100} fit="cover" />
+                                                </Box>
+                                            </>
                                         ))}
                                     </Group>
 
@@ -201,7 +206,7 @@ export const OfferForm = () => {
                                                             Przeciągnij lub kliknij
                                                         </Text>
                                                         <Text size="sm" c="dimmed" inline mt={7}>
-                                                            Załącz zdjęcie które ma być widoczne
+                                                            Załącz zdjęcia, max 5
                                                         </Text>
                                                     </div>
                                                 </Group>

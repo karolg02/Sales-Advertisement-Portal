@@ -7,7 +7,8 @@ import {
     IconDoorExit,
     IconHome,
     IconPencilPlus,
-    IconShoppingBag, IconWallpaper,
+    IconShoppingBag,
+    IconWallpaper,
 } from "@tabler/icons-react";
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 import {useEffect, useState} from "react";
@@ -20,6 +21,10 @@ export const Layout = () => {
     const location = useLocation();
     const showBurger = location.pathname === '/offers';
     const [isRed, setIsRed] = useState(false);
+    const [show1, setShow1] = useState(false);
+    const [show2, setShow2] = useState(false);
+    const [show3, setShow3] = useState(false);
+    const [show4, setShow4] = useState(false);
 
     useEffect(() => {
         closeMobile();
@@ -82,23 +87,68 @@ export const Layout = () => {
                         YourSaleAnnouncement
                     </Text>
                     <Group justify="end" style={{ flex: "1"}}>
-                        <Group ml="xl" gap={4} visibleFrom="sm" style={{ alignItems: "end" }}>
-                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/offers')}>
-                                Przeglądaj oferty <IconHome style={{ marginLeft: 4, color:"orange" }}/>
-                            </Button>
-                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/offers/new')}>
-                                Stwórz ofertę <IconPencilPlus style={{ marginLeft: 4, color:"orange"  }}/>
-                            </Button>
-                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/myoffers')}>
-                                Moje oferty <IconWallpaper style={{ marginLeft: 4, color:"orange"  }}/>
-                            </Button>
-                            <Button className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
-                                Koszyk<IconShoppingBag style={{ marginLeft: 4, color:"orange"  }} />
-                            </Button>
+                        <Group ml="xl" gap={4} style={{ alignItems: "end" }}>
+                            <Popover radius="xl" position="bottom" withArrow shadow="md" opened={show1}>
+                                <Popover.Target>
+                                    <Button
+                                        onMouseEnter={() => setShow1(true)}
+                                        onMouseLeave={() => setShow1(false)}
+                                        className="buttonCover" variant="transparent" onClick={() => navigate('/offers')}>
+                                        <IconHome style={{color:"orange" }}/>
+                                    </Button>
+                                </Popover.Target>
+                                <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                                    <Text size="sm">Strona główna</Text>
+                                </Popover.Dropdown>
+                            </Popover>
+
+                            <Popover radius="xl" position="bottom" withArrow shadow="md" opened={show2}>
+                                <Popover.Target>
+                                    <Button
+                                        onMouseEnter={() => setShow2(true)}
+                                        onMouseLeave={() => setShow2(false)}
+                                        className="buttonCover" variant="transparent" onClick={() => navigate('/offers/new')}>
+                                        <IconPencilPlus style={{color:"orange"  }}/>
+                                    </Button>
+                                </Popover.Target>
+                                <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                                    <Text size="sm">Dodaj oferte</Text>
+                                </Popover.Dropdown>
+                            </Popover>
+
+                            <Popover radius="xl" position="bottom" withArrow shadow="md" opened={show3}>
+                                <Popover.Target>
+                                    <Button
+                                        onMouseEnter={() => setShow3(true)}
+                                        onMouseLeave={() => setShow3(false)}
+                                        className="buttonCover" variant="transparent" onClick={() => navigate('/myoffers')}>
+                                        <IconWallpaper style={{color:"orange"  }}/>
+                                    </Button>
+                                </Popover.Target>
+                                <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                                    <Text size="sm">Moje oferty</Text>
+                                </Popover.Dropdown>
+                            </Popover>
+
+                            <Popover radius="xl" position="bottom" withArrow shadow="md" opened={show4}>
+                                <Popover.Target>
+                                    <Button
+                                        onMouseEnter={() => setShow4(true)}
+                                        onMouseLeave={() => setShow4(false)}
+                                        className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
+                                        <IconShoppingBag style={{color:"orange"  }} />
+                                    </Button>
+                                </Popover.Target>
+                                <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                                    <Text size="sm">Koszyk</Text>
+                                </Popover.Dropdown>
+                            </Popover>
+
+
                             <Popover radius="lg" position="bottom" shadow="md" withArrow>
                                 <Popover.Target>
                                     <Button className="buttonCover" variant="transparent">
-                                        Konto<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
+                                        <Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{backgroundColor:"rgb(45,42,42)"}}>

@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {OfferType} from "../../types/OfferType.ts";
 import { useAtom } from 'jotai';
 import { listOffer } from './api/offer.ts';
-import {categoryAtom, lowerPriceAtom, searchAtom, upperPriceAtom} from "../../components/store.ts";
+import {categoryAtom, cityAtom, lowerPriceAtom, searchAtom, upperPriceAtom} from "../../components/store.ts";
 
 export const OfferList = () => {
     const [data, setData] = useState<OfferType[]>([]);
@@ -13,6 +13,7 @@ export const OfferList = () => {
     const [lowerPrice] = useAtom(lowerPriceAtom);
     const [upperPrice] = useAtom(upperPriceAtom);
     const [page, setPage] = useState<number>(1);
+    const [city] = useAtom(cityAtom);
 
     const fetchOffers = (newPage = 1) => {
         const filters: Record<string, any> = {};
@@ -20,6 +21,7 @@ export const OfferList = () => {
         if (selectedCategory) filters.category = selectedCategory;
         if (lowerPrice != null) filters.lowerPrice = lowerPrice;
         if (upperPrice != null) filters.upperPrice = upperPrice;
+        if (city != null) filters.city = city;
 
         if (newPage === 1) setData([]);
 
@@ -31,7 +33,7 @@ export const OfferList = () => {
     useEffect(() => {
         setPage(1);
         fetchOffers(1);
-    }, [search, selectedCategory, lowerPrice, upperPrice]);
+    }, [search, selectedCategory, lowerPrice, upperPrice, city]);
 
     useEffect(() => {
         if (page > 1) fetchOffers(page);

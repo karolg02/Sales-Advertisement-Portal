@@ -23,7 +23,8 @@ export class YsaService {
                 price: {
                     gte: filter.lowerPrice || undefined,
                     lte: filter.upperPrice || undefined,
-                }
+                },
+                city: filter.city ? {contains: filter.city} : undefined,
             },
             orderBy: {
                 [filter.sortBy]: filter.sortOrder,
@@ -65,6 +66,12 @@ export class YsaService {
                     ysaId: id,
                 },
             });
+
+            await this.prisma.photos.deleteMany({
+                where: {
+                    ysaId: id,
+                }
+            })
 
             return await this.prisma.ysa.delete({
                 where: {

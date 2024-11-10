@@ -1,5 +1,5 @@
 import { Exclude } from 'class-transformer';
-import {User, ysa} from '@prisma/client';
+import {User} from '@prisma/client';
 
 export class UserDto implements User{
     @Exclude()

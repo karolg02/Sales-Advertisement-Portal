@@ -1,14 +1,15 @@
-import {Button, Card, Group, NumberInput, SimpleGrid, Text, TextInput} from "@mantine/core";
+import {Button, Card, Group, NumberInput, ScrollArea, SimpleGrid, Text, TextInput} from "@mantine/core";
 import {categories} from "../features/yoursalesannouncement/categories.ts";
-import {IconMoneybag, IconZoom} from "@tabler/icons-react";
+import {IconBuilding, IconMoneybag, IconZoom} from "@tabler/icons-react";
 import { useAtom } from 'jotai';
-import {categoryAtom, lowerPriceAtom, searchAtom, upperPriceAtom} from "./store.ts";
+import {categoryAtom, cityAtom, lowerPriceAtom, searchAtom, upperPriceAtom} from "./store.ts";
 
 export const AppNavbar = () => {
     const [search, setSearch] = useAtom(searchAtom);
     const [selectedCategory, setSelectedCategory] = useAtom(categoryAtom);
     const [lowerPrice, setLowerPrice] = useAtom(lowerPriceAtom);
     const [upperPrice, setUpperPrice] = useAtom(upperPriceAtom);
+    const [city, setCity] = useAtom(cityAtom);
 
     const handleCategoryClick = (category: string) => {
         setSelectedCategory(category === selectedCategory ? null : category);
@@ -19,11 +20,13 @@ export const AppNavbar = () => {
         setSelectedCategory(null);
         setLowerPrice(0);
         setUpperPrice(null);
+        setCity('');
     }
     return (
         <div style={{display: "list-item"}}>
+            <ScrollArea h="85vh">
             <Group justify="center" pt="sm">
-                <IconZoom style={{color: "orange"}}/>
+                <IconZoom style={{color: "orange", marginTop:"0.5em"}}/>
                 <TextInput
                     mt="xs"
                     placeholder="Wyszukaj po nazwie"
@@ -71,6 +74,17 @@ export const AppNavbar = () => {
                     min={lowerPrice ?? undefined}
                     style={{width:'45%'}}
                 />
+
+                <Group justify="center" >
+                    <IconBuilding style={{color: "orange",marginTop:"0.7em"}}/>
+                    <TextInput
+                        mt="xs"
+                        placeholder="Miasto"
+                        value={city ?? undefined}
+                        onChange={(event) => setCity(event.currentTarget.value)}
+                    />
+                </Group>
+
                 <Button
                     variant="outline"
                     color="yellow"
@@ -79,6 +93,7 @@ export const AppNavbar = () => {
                     Wyczyść filtry
                 </Button>
             </Group>
+            </ScrollArea>
         </div>
     )
 }

@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-11-09.21:45:19</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-11-10.00:35:30</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1653,12 +1653,13 @@
       <StoredType>TEXT|0s</StoredType>
     </column>
     <column id="571" parent="556" name="ysaId">
+      <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
     <foreign-key id="572" parent="556" name="Photos_ysaId_fkey">
       <ColNames>ysaId</ColNames>
-      <OnDelete>set-null</OnDelete>
+      <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>ysa</RefTableName>

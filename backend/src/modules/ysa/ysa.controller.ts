@@ -20,6 +20,8 @@ import {FilterYsaDto} from "./dto/filter-ysa.dto";
 import {TokenGuard} from "../auth/token.guard";
 import {UserID} from "../auth/user.decorator";
 import {postPhoto} from "./dto/postPhoto.dto";
+import {plainToInstance} from "class-transformer";
+import {PhotosDto} from "./dto/photos.dto";
 
 @Controller('ysa')
 export class YsaController {
@@ -81,7 +83,7 @@ export class YsaController {
     @Get("/photos/:id")
     @UseGuards(TokenGuard)
     async getPhotos(@Param("id", ParseIntPipe) id: number){
-        return this.ysaService.getPhotos(id);
+        return plainToInstance(PhotosDto,this.ysaService.getPhotos(id));
     }
 
     @Post("/photos/:id")

@@ -32,8 +32,8 @@ model ysa {
 model Photos {
   id    Int    @id @default(autoincrement())
   url   String
-  ysa   ysa?   @relation(fields: [ysaId], references: [id])
-  ysaId Int?
+  ysa   ysa    @relation(fields: [ysaId], references: [id])
+  ysaId Int
 }
 
 model User {

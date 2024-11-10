@@ -64,8 +64,6 @@ export const OfferForm = () => {
                     await postPhoto(offerId, url);
                 })
             );
-
-            console.log("Oferta i zdjęcia zostały zapisane pomyślnie!");
         } catch (error) {
             console.error("Błąd podczas zapisywania oferty lub zdjęć:", error);
         }

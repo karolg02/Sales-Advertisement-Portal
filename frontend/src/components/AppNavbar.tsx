@@ -26,7 +26,7 @@ export const AppNavbar = () => {
         <div style={{display: "list-item"}}>
             <ScrollArea h="85vh">
             <Group justify="center" pt="sm">
-                <IconZoom style={{color: "orange", marginTop:"0.5em"}}/>
+                <IconZoom style={{color: "orange", marginTop:"0.7em"}}/>
                 <TextInput
                     mt="xs"
                     placeholder="Wyszukaj po nazwie"

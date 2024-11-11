@@ -13,6 +13,9 @@ import {
 import {logout} from "../features/yoursalesannouncement/api/logout.ts";
 import {useEffect, useState} from "react";
 import {Notifications} from "@mantine/notifications";
+import {userData} from "./store.ts";
+import {useAtom} from "jotai";
+import {getMe} from "./getme.ts";
 
 export const Layout = () => {
     const [mobileOpened, { toggle: toggleMobile, close: closeMobile }] = useDisclosure();
@@ -25,6 +28,7 @@ export const Layout = () => {
     const [show2, setShow2] = useState(false);
     const [show3, setShow3] = useState(false);
     const [show4, setShow4] = useState(false);
+    const [, setUser] = useAtom(userData);
 
     useEffect(() => {
         closeMobile();
@@ -36,6 +40,16 @@ export const Layout = () => {
             Notifications.clean();
         };
     }, [navigate]);
+
+    const handleProfile = async () => {
+        try {
+            const response = await getMe();
+            setUser(response);
+            navigate(`/profile/${response.id}`);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
     const handleClick = () => {
         setIsRed(!isRed);
@@ -60,14 +74,14 @@ export const Layout = () => {
                     {showBurger ? (
                         <>
                             <Burger
-                                color="yellow"
+                                color="white"
                                 opened={mobileOpened}
                                 onClick={toggleMobile}
                                 hiddenFrom="sm"
                                 size="sm"
                             />
                             <Burger
-                                color="yellow"
+                                color="white"
                                 opened={desktopOpened}
                                 onClick={toggleDesktop}
                                 visibleFrom="sm"
@@ -94,7 +108,7 @@ export const Layout = () => {
                                         onMouseEnter={() => setShow1(true)}
                                         onMouseLeave={() => setShow1(false)}
                                         className="buttonCover" variant="transparent" onClick={() => navigate('/offers')}>
-                                        <IconHome style={{color:"orange" }}/>
+                                        <IconHome/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -108,7 +122,7 @@ export const Layout = () => {
                                         onMouseEnter={() => setShow2(true)}
                                         onMouseLeave={() => setShow2(false)}
                                         className="buttonCover" variant="transparent" onClick={() => navigate('/offers/new')}>
-                                        <IconPencilPlus style={{color:"orange"  }}/>
+                                        <IconPencilPlus/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -122,7 +136,7 @@ export const Layout = () => {
                                         onMouseEnter={() => setShow3(true)}
                                         onMouseLeave={() => setShow3(false)}
                                         className="buttonCover" variant="transparent" onClick={() => navigate('/myoffers')}>
-                                        <IconWallpaper style={{color:"orange"  }}/>
+                                        <IconWallpaper/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -136,7 +150,7 @@ export const Layout = () => {
                                         onMouseEnter={() => setShow4(true)}
                                         onMouseLeave={() => setShow4(false)}
                                         className="buttonCover" variant="transparent" onClick={() => navigate('/mycart')}>
-                                        <IconShoppingBag style={{color:"orange"  }} />
+                                        <IconShoppingBag/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -148,11 +162,11 @@ export const Layout = () => {
                             <Popover radius="lg" position="bottom" shadow="md" withArrow>
                                 <Popover.Target>
                                     <Button className="buttonCover" variant="transparent">
-                                        <Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
+                                        <Avatar variant="transparent" color="white" radius="xl" style={{ marginLeft: 4}}/>
                                     </Button>
                                 </Popover.Target>
-                                <Popover.Dropdown style={{backgroundColor:"rgb(45,42,42)"}}>
-                                    <Button className="buttonCover" variant="transparent" onClick={() => navigate('/myprofile')}>
+                                <Popover.Dropdown bg="dark">
+                                    <Button className="buttonCover" variant="transparent" onClick={handleProfile}>
                                         Mój profil<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
                                     </Button>
                                     <Button className="buttonCover" variant="transparent" onClick={handleLogout}>

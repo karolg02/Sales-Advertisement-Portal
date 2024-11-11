@@ -1,7 +1,7 @@
 import { OfferType } from "../../types/OfferType.ts";
 import { useEffect, useState } from "react";
 import { getOffer } from "./api/getOffer.ts";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { Button, Divider, Group, Image, List, Loader, NumberInput, Paper, SimpleGrid, Text, ActionIcon } from "@mantine/core";
 import { Userdata } from "../userdata/userdata.ts";
 import { getUserData } from "../userdata/api/getUser.ts";
@@ -20,6 +20,7 @@ export const SingleOffer = () => {
     const form = useAddToCartForm();
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -123,8 +124,12 @@ export const SingleOffer = () => {
                         <Text>Utworzono {formattedDate}</Text>
                     </Group>
                     <Divider my="xl" />
-
-                    <Text size="lg" fw={600}>Informacje o sprzedawcy</Text>
+                    <Group justify="space-between">
+                        <Text size="lg" fw={600}>Informacje o sprzedawcy</Text>
+                        <Text size="lg" fw={600} style={{cursor: 'pointer'}}
+                        onClick={() => navigate(`/profile/${userdata.id}`)}
+                        >Przejdz do profilu</Text>
+                    </Group>
                     <List pt="sm">
                         <Group justify="space-between">
                             <Text>

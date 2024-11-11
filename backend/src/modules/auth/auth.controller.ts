@@ -20,6 +20,7 @@ export class AuthController {
         res.cookie('is-logged', true, {
             expires: new Date(Date.now()+60*60*1000),
         });
+        return userId;
     }
 
     @Post('logout')

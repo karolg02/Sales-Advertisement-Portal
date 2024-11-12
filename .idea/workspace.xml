@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ filtering through city, + popovers, + backend adjustments">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/getme.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/userdata/UserPage.tsx" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ user profile, rating (need to be implemented in backend), + little changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppNavbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/Routing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +178,9 @@
       <workItem from="1731240997916" duration="9592000" />
       <workItem from="1731252489219" duration="83000" />
       <workItem from="1731274260882" duration="1439000" />
-      <workItem from="1731275729887" duration="7842000" />
+      <workItem from="1731275729887" duration="7932000" />
+      <workItem from="1731365342281" duration="851000" />
+      <workItem from="1731450656674" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -395,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731252212950</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="+ user profile, rating (need to be implemented in backend), + little changes">
+      <option name="closed" value="true" />
+      <created>1731283898436</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1731283898436</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,6 +445,7 @@
     <MESSAGE value="+ option to upload 5 photos/ +frontend+backend" />
     <MESSAGE value="+ option switching photos on offer" />
     <MESSAGE value="+ filtering through city, + popovers, + backend adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ filtering through city, + popovers, + backend adjustments" />
+    <MESSAGE value="+ user profile, rating (need to be implemented in backend), + little changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ user profile, rating (need to be implemented in backend), + little changes" />
   </component>
 </project>

@@ -37,15 +37,26 @@ model Photos {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   name      String
   surename  String
-  email     String   @unique
+  email     String     @unique
   password  String
-  number    Int      @unique
-  createdAt DateTime @default(now())
+  number    Int        @unique
+  createdAt DateTime   @default(now())
   offers    ysa[] // tu tworze relacje z ysa, w tym wypadku daje swoje id do oferty
   carts     Cart[] // tu tworze relacje z Cart
+  comments  Comments[]
+}
+
+model Comments {
+  id        Int      @id @default(autoincrement())
+  User      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  profileId Int
+  text      String
+  rating    Decimal
+  createdAt DateTime @default(now()) //tu skonczylem
 }
 
 model Cart {

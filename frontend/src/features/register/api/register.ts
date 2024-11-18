@@ -12,9 +12,25 @@ export const Register = async (name: string, surename: string, email: string, pa
     });
     if(response.ok){
         Notifications.show({color:"green", title: "Sukces!", message: "Rejestracja przebiegła pomyślnie!",autoClose: 3000, });
-    }else if(response.status==409){
-        Notifications.show({color:"red", title: "Niepowodzenie!", message: "Użytwkonik o takim adresie już istnieje!",autoClose: 3000, });
-    }else{
-        Notifications.show({color:"red", title: "Niepowodzenie!", message: "Nie udało się utworzyć użytkownika!",autoClose: 3000, });
+    } else {
+    let errorMessage = "Nie udało się utworzyć użytkownika!";
+    try {
+        const errorData = await response.json();
+        if (errorData.message) {
+            errorMessage =
+                Array.isArray(errorData.message) && errorData.message.length > 0
+                    ? errorData.message[0]
+                    : errorData.message;
+        }
+    } catch (e) {
+        console.error("Nie udało się sparsować odpowiedzi błędu:", e);
     }
+
+    Notifications.show({
+        color: "red",
+        title: "Niepowodzenie!",
+        message: errorMessage,
+        autoClose: 3000,
+    });
+}
 }

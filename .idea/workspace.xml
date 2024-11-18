@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ user profile, rating (need to be implemented in backend), + little changes">
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ idea to add comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/register/api/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/register/api/register.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +182,10 @@
       <workItem from="1731275729887" duration="7932000" />
       <workItem from="1731365342281" duration="851000" />
       <workItem from="1731450656674" duration="1000" />
+      <workItem from="1731451681403" duration="19000" />
+      <workItem from="1731455680049" duration="1000" />
+      <workItem from="1731606044592" duration="89000" />
+      <workItem from="1731930173615" duration="1895000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -398,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731283898436</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="+ idea to add comments">
+      <option name="closed" value="true" />
+      <created>1731451698067</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1731451698067</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,6 +459,7 @@
     <MESSAGE value="+ option switching photos on offer" />
     <MESSAGE value="+ filtering through city, + popovers, + backend adjustments" />
     <MESSAGE value="+ user profile, rating (need to be implemented in backend), + little changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ user profile, rating (need to be implemented in backend), + little changes" />
+    <MESSAGE value="+ idea to add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ idea to add comments" />
   </component>
 </project>

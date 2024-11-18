@@ -11,6 +11,8 @@ import { AddCartType } from "../../types/AddCartType.ts";
 import { addToCart } from "./api/add-cart.ts";
 import { getPhotos } from "./api/getPhotos.ts";
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import {useAtom} from "jotai/index";
+import {userData} from "../../components/store.ts";
 
 export const SingleOffer = () => {
     const [data, setData] = useState<OfferType | null>(null);
@@ -21,6 +23,7 @@ export const SingleOffer = () => {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
     const navigate = useNavigate();
+    const [, setUser] = useAtom(userData);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,6 +52,17 @@ export const SingleOffer = () => {
 
         fetchData();
     }, [id]);
+
+    const goToProfile = async () =>{
+        try {
+            setUser(userdata);
+            if(userdata?.id){
+                navigate(`/profile/${userdata.id}`)
+            }
+        }catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
 
     const handleSubmit = async (vals: AddCartType) => {
         try {
@@ -127,7 +141,7 @@ export const SingleOffer = () => {
                     <Group justify="space-between">
                         <Text size="lg" fw={600}>Informacje o sprzedawcy</Text>
                         <Text size="lg" fw={600} style={{cursor: 'pointer'}}
-                        onClick={() => navigate(`/profile/${userdata.id}`)}
+                        onClick={goToProfile}
                         >Przejdz do profilu</Text>
                     </Group>
                     <List pt="sm">

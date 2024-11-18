@@ -39,7 +39,7 @@ export const UserPage = () => {
             setFormattedDate(new Date(user.createdAt).toLocaleString());
         }
         fetchComments();
-    },[])
+    },[user])
 
     const renderStars = (rating: number) => {
         const fullStars = Math.floor(rating);
@@ -126,7 +126,7 @@ export const UserPage = () => {
                                         <NumberInput
                                             min={1}
                                             max={5}
-                                            value={5}
+                                            defaultValue={1}
                                             {...form.getInputProps('rating')}
                                         />
                                         <Button mt="md" radius="md"

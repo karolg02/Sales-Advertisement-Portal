@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+ idea to add comments">
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+fixed going to an author profile of the offer">
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/user/dto/create-comment.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/cart/api/getComments.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/userdata/api/postComment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/userdata/hooks/useCommentForm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/CommentType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/CommentTypeValues.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/register/api/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/register/api/register.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/exceptions/ysa-notfound-exception.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/myoffers/MyOffers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/userdata/UserPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/userdata/UserPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +197,9 @@
       <workItem from="1731451681403" duration="19000" />
       <workItem from="1731455680049" duration="1000" />
       <workItem from="1731606044592" duration="89000" />
-      <workItem from="1731930173615" duration="1895000" />
+      <workItem from="1731930173615" duration="4056000" />
+      <workItem from="1731945405415" duration="13533000" />
+      <workItem from="1731960498173" duration="1660000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -411,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731451698067</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="+fixed going to an author profile of the offer">
+      <option name="closed" value="true" />
+      <created>1731932243991</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1731932243991</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +457,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="init" />
     <MESSAGE value="dodano polaczenie z baza danych, pare endpointow oraz filtrowanie :)" />
     <MESSAGE value="+ validation and some stuff" />
     <MESSAGE value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
@@ -460,6 +481,7 @@
     <MESSAGE value="+ filtering through city, + popovers, + backend adjustments" />
     <MESSAGE value="+ user profile, rating (need to be implemented in backend), + little changes" />
     <MESSAGE value="+ idea to add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ idea to add comments" />
+    <MESSAGE value="+fixed going to an author profile of the offer" />
+    <option name="LAST_COMMIT_MESSAGE" value="+fixed going to an author profile of the offer" />
   </component>
 </project>

@@ -18,3 +18,9 @@ export class InCart extends NotFoundException {
         super("Already in cart");
     }
 }
+
+export class CantPost extends NotFoundException {
+    constructor() {
+        super("You can't post an comment on your own profile!");
+    }
+}

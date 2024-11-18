@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {OfferType} from "../../types/OfferType.ts";
-import {ScrollArea, SimpleGrid, Text} from "@mantine/core";
+import {SimpleGrid, Text} from "@mantine/core";
 import {MyOffersList} from "./MyOffersList.tsx";
 import {ListMyOffers} from "./api/listMyOffers.ts";
 import {Notifications} from "@mantine/notifications";
@@ -14,7 +14,6 @@ export const MyOffers = () =>{
 
     return (
         <div style={{width: '100%'}}>
-            <ScrollArea h="92vh">
             <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
             {data.length === 0 ? (
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
@@ -28,7 +27,6 @@ export const MyOffers = () =>{
                     {data.map((item) => <MyOffersList key={item.id} item={item}/>)}
                 </SimpleGrid>
             )}
-            </ScrollArea>
         </div>
     )
 }

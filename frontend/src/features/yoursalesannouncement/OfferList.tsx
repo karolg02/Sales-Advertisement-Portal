@@ -1,9 +1,9 @@
-import {Button, ScrollArea, SimpleGrid} from "@mantine/core";
+import {Button, SimpleGrid} from "@mantine/core";
 import {OfferListItem} from "./OfferListItem.tsx";
 import {useEffect, useState} from "react";
 import {OfferType} from "../../types/OfferType.ts";
-import { useAtom } from 'jotai';
-import { listOffer } from './api/offer.ts';
+import {useAtom} from 'jotai';
+import {listOffer} from './api/offer.ts';
 import {categoryAtom, cityAtom, lowerPriceAtom, searchAtom, upperPriceAtom} from "../../components/store.ts";
 
 export const OfferList = () => {
@@ -45,7 +45,6 @@ export const OfferList = () => {
 
     return (
         <div>
-            <ScrollArea h="92vh">
                 <SimpleGrid p="lg" ml="xl" mr="xl" cols={{ base: 1, sm: 2, lg: 3 }}>
                     {data.map((item) => (
                         <OfferListItem key={item.id} item={item} />
@@ -62,7 +61,6 @@ export const OfferList = () => {
                         Wczytaj więcej pozycji
                     </Button>
                 )}
-            </ScrollArea>
         </div>
     );
 

@@ -38,7 +38,7 @@ export const UserPage = () => {
         if(user){
             setFormattedDate(new Date(user.createdAt).toLocaleString());
         }
-        fetchComments();
+        fetchComments().then();
     },[user])
 
     const renderStars = (rating: number) => {

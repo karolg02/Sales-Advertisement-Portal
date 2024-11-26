@@ -50,7 +50,7 @@ export const SingleOffer = () => {
             }
         };
 
-        fetchData();
+        fetchData().then();
     }, [id]);
 
     const goToProfile = async () =>{

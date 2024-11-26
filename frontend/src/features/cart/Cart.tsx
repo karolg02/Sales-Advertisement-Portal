@@ -24,7 +24,7 @@ export const Cart = () => {
     }
 
     useEffect(() => {
-        fetchCart();
+        fetchCart().then();
     }, []);
 
     return (

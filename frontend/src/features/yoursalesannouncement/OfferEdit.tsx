@@ -60,7 +60,7 @@ export const OfferEdit = () => {
                 console.error("Error fetching offer:", error);
             }
         };
-        fetchGet();
+        fetchGet().then();
     }, [id,isDataLoaded]);
 
     const handleSubmit = async (vals: OfferTypeValues) => {

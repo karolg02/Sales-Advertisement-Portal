@@ -16,7 +16,6 @@ interface CartItemsProps {
 export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps) => {
     const [offer, setData] = useState<OfferType | null>(null);
     const navigate = useNavigate();
-
     const [quantity, setQuantity] = useState(item.amount);
 
     const increaseQuantity = () => {
@@ -45,7 +44,7 @@ export const CartItems = ({item, refreshCart, updateTotalPrice}: CartItemsProps)
                 console.error("Error fetching offer:", error);
             }
         };
-        fetch();
+        fetch().then();
     }, [])
 
     const handleDelete = async (ysaId: number) => {

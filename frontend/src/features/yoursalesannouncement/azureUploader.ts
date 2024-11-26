@@ -1,8 +1,9 @@
 import { BlobServiceClient } from '@azure/storage-blob';
+import {AZURE_CN, AZURE_SAN, AZURE_SST} from "../../config.ts";
 
-const AZURE_STORAGE_ACCOUNT_NAME = "shoppingkarol";
-const AZURE_STORAGE_SAS_TOKEN = "sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2025-04-05T06:47:49Z&st=2024-10-29T23:47:49Z&spr=https&sig=tdne4zN9Ie%2FHMjxTWkGq32UB36RobbwdZpGLrZXORWc%3D";
-const AZURE_CONTAINER_NAME = "shoppingapp";
+const AZURE_STORAGE_ACCOUNT_NAME = AZURE_SAN;
+const AZURE_STORAGE_SAS_TOKEN = AZURE_SST;
+const AZURE_CONTAINER_NAME = AZURE_CN;
 
 export const uploadToAzure = async (file: File): Promise<string | null> => {
     try {

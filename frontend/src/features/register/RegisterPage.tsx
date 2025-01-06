@@ -83,21 +83,21 @@ export const RegisterPage = () => {
                                 <TextInput
                                     required
                                     label="Email"
-                                    placeholder="Enter your email"
+                                    placeholder="Adres email"
                                     {...form.getInputProps('email')}
                                 />
                                 <TextInput
                                     required
                                     type='password'
                                     label="Password"
-                                    placeholder="Enter your password"
+                                    placeholder="Hasło"
                                     {...form.getInputProps('password')}
                                 />
                                 <NumberInput
                                     hideControls
                                     required
                                     type='tel'
-                                    label="number"
+                                    label="Numer telefonu"
                                     placeholder="+48"
                                     {...form.getInputProps('number')}
                                 />

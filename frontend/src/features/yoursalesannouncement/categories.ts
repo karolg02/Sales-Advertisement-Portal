@@ -13,6 +13,5 @@ export const categories = [
     { value: 'Nieruchomosci', label: 'Nieruchomości' },
     { value: 'Kolekcje/sztuka', label: 'Kolekcje i sztuka' },
     { value: 'Firma/uslugi', label: 'Firma i usługi' },
-    { value: 'Inne', label: 'Inne' },
-    { value: 'Oddam', label: 'Oddam za darmo' },
+    { value: 'Inne', label: 'Inne' }
 ]

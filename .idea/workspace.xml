@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+little changes">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/azureUploader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/azureUploader.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +219,7 @@
       <workItem from="1734717801367" duration="73000" />
       <workItem from="1735405577496" duration="636000" />
       <workItem from="1736103353503" duration="1000" />
-      <workItem from="1736189581213" duration="650000" />
+      <workItem from="1736189581213" duration="2696000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -484,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732640757989</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="+working">
+      <option name="closed" value="true" />
+      <created>1736190525992</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1736190525992</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +509,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
     <MESSAGE value="+frontend :)" />
     <MESSAGE value="+front items, login, register, logout, ofert adding" />
     <MESSAGE value="+ deleting option" />
@@ -533,6 +533,7 @@
     <MESSAGE value="+comments" />
     <MESSAGE value="probably the end" />
     <MESSAGE value="+little changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="+little changes" />
+    <MESSAGE value="+working" />
+    <option name="LAST_COMMIT_MESSAGE" value="+working" />
   </component>
 </project>

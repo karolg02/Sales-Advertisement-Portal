@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="probably the end">
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+little changes">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfc79892-dac5-4cfb-89ea-57f2e75600fd/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/modules/user/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/Cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/cart/CartItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/singleoffer/SingleOffer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/userdata/UserPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/userdata/UserPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/OfferListItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/azureUploader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/azureUploader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -78,7 +77,7 @@
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
     &quot;npm.start:debug.executor&quot;: &quot;Run&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -207,7 +206,27 @@
       <workItem from="1732571737880" duration="1285000" />
       <workItem from="1732573149574" duration="249000" />
       <workItem from="1732638900183" duration="1000" />
-      <workItem from="1732639606070" duration="1050000" />
+      <workItem from="1732639606070" duration="1153000" />
+      <workItem from="1732640845802" duration="38000" />
+      <workItem from="1732727143672" duration="13000" />
+      <workItem from="1732894024625" duration="2243000" />
+      <workItem from="1732978660183" duration="1000" />
+      <workItem from="1732980869857" duration="3000" />
+      <workItem from="1733229762328" duration="2000" />
+      <workItem from="1733245177442" duration="1000" />
+      <workItem from="1733435109669" duration="1000" />
+      <workItem from="1733435383329" duration="1000" />
+      <workItem from="1733438162209" duration="6000" />
+      <workItem from="1734472443771" duration="606000" />
+      <workItem from="1734538472005" duration="1000" />
+      <workItem from="1734690195280" duration="10000" />
+      <workItem from="1734696539285" duration="269000" />
+      <workItem from="1734697362472" duration="676000" />
+      <workItem from="1734717495694" duration="209000" />
+      <workItem from="1734717801367" duration="73000" />
+      <workItem from="1735405577496" duration="636000" />
+      <workItem from="1736103353503" duration="1000" />
+      <workItem from="1736189581213" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -457,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731965580234</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="+little changes">
+      <option name="closed" value="true" />
+      <created>1732640757989</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1732640757989</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +508,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="+ cart add,delete all,delete by id, [w sensie koszyk :)] + database" />
     <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
     <MESSAGE value="+frontend :)" />
     <MESSAGE value="+front items, login, register, logout, ofert adding" />
@@ -506,6 +532,7 @@
     <MESSAGE value="+fixed going to an author profile of the offer" />
     <MESSAGE value="+comments" />
     <MESSAGE value="probably the end" />
-    <option name="LAST_COMMIT_MESSAGE" value="probably the end" />
+    <MESSAGE value="+little changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="+little changes" />
   </component>
 </project>

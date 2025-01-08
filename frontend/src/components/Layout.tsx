@@ -96,12 +96,11 @@ export const Layout = () => {
                             />
                         </>
                     )}
-
-                    <Text c="white" size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right", marginLeft: 4}}>
+                    <Text c="white" visibleFrom="sm" size="xl" fw="bolder" style={{ display: 'flex', alignItems: 'center', textAlign: "right", marginLeft: 2,}}>
                         YourSaleAnnouncement
                     </Text>
                     <Group justify="end" style={{ flex: "1"}}>
-                        <Group ml="xl" gap={4} style={{ alignItems: "end" }}>
+                        <Group ml="xs" gap={4} style={{ alignItems: "end" }}>
                             <Popover radius="xl" position="bottom" withArrow shadow="md" opened={show1}>
                                 <Popover.Target>
                                     <Button
@@ -162,12 +161,12 @@ export const Layout = () => {
                             <Popover radius="lg" position="bottom" shadow="md" withArrow>
                                 <Popover.Target>
                                     <Button className="buttonCover" variant="transparent">
-                                        <Avatar variant="transparent" color="white" radius="xl" style={{ marginLeft: 4}}/>
+                                        <Avatar variant="transparent" color="white" radius="xl" style={{ marginLeft: 2}}/>
                                     </Button>
                                 </Popover.Target>
                                 <Popover.Dropdown bg="dark">
                                     <Button className="buttonCover" variant="transparent" onClick={handleProfile}>
-                                        Mój profil<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 4}}/>
+                                        Mój profil<Avatar variant="transparent" color="yellow" radius="xl" style={{ marginLeft: 2}}/>
                                     </Button>
                                     <Button className="buttonCover" variant="transparent" onClick={handleLogout}>
                                         Wyloguj <IconDoorExit style={{ marginLeft: 4, color:"orange"  }}/>

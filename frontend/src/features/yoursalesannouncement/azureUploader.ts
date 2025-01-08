@@ -9,14 +9,11 @@ export const uploadToAzure = async (file: File): Promise<string | null> => {
         const blobServiceClient = new BlobServiceClient(`https://${AZURE_STORAGE_ACCOUNT_NAME}.blob.core.windows.net?${AZURE_STORAGE_SAS_TOKEN}`);
         const containerClient = blobServiceClient.getContainerClient(AZURE_CONTAINER_NAME);
 
-        // Generate a unique blob name
         const blobName = `${Date.now()}-${file.name}`;
         const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
-        // Upload file
         await blockBlobClient.uploadBrowserData(file);
 
-        // Return the URL of the uploaded file
         return blockBlobClient.url;
     } catch (error) {
         console.error("Error uploading file to Azure:", error);

@@ -1,4 +1,4 @@
-import {Box, Button, Image, List, Loader, NumberInput, Paper, ScrollArea, Text, Textarea} from "@mantine/core";
+import {Box, Button, Grid, Image, List, Loader, NumberInput, Paper, ScrollArea, Text, Textarea} from "@mantine/core";
 import {useAtom} from "jotai";
 import {userData} from "../../components/store.ts";
 import {useEffect, useState} from "react";
@@ -25,6 +25,7 @@ export const UserPage = () => {
             let x = 0;
             for(let i = 0; i < response.length; i++){
                 x += Number(response[i].rating);
+                response[i].createdAt = new Date(response[i].createdAt.toLocaleString());
             }
             if(response.length > 0){
                 setRating(x/response.length);
@@ -80,87 +81,96 @@ export const UserPage = () => {
 
     return (
         <>
-            <Paper ml="15%" mr="15%" radius="xl">
+            <Paper ml="10%" mr="10%" radius="xl" p="lg" h="100%">
                 <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
-                <Box display="flex" p="lg" style={{ flexDirection: 'row' }}>
-                    <Image
-                        radius="xl"
-                        width={350}
-                        height={350}
-                        src="https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg"
-                    />
-                    <Box mt="lg" ml="10%" style={{ flexGrow: 1 }}>
-                        <List spacing="sm" pl="md">
-                            <Text mb="xl" fw={700}>Profil użytkownika</Text>
-                            <Text mb="md">Konto utworzono: {formattedDate}</Text>
-                            <Text mb="md">Imię: {user.name}</Text>
-                            <Text mb="md">Nazwisko: {user.surename}</Text>
-                            <Text mb="md">Numer: {user.number}</Text>
-                            <Text>Email: {user.email}</Text>
-                        </List>
-                    </Box>
-                    <Box>
-                        <Text fw={700} mt="lg" mb="xs">Ocena:</Text>
-                        <Box display="flex">{renderStars(Number(rating))}</Box>
-                    </Box>
-                </Box>
-                <Box ml="xl" p="lg">
-                    <Box>
-                        <Text fw={700} mb="sm">Dodaj komentarz:</Text>
-                        <Paper p="md" radius="md" shadow="xs">
-                            <form onSubmit={form.onSubmit(handleSubmit)}>
-                                <Box display="flex" style={{ alignItems: "flex-start" }} mb="sm">
-                                    <Box flex="1" mr="sm">
-                                        <Text mb="xs">Treść komentarza:</Text>
-                                        <Textarea
-                                            name="text"
-                                            minRows={3}
-                                            required
-                                            autosize
-                                            placeholder="treść komentarza"
-                                            {...form.getInputProps('text')}
-                                        />
-                                    </Box>
-                                    <Box>
-                                        <Text mb="xs">Ocena (1-5):</Text>
-                                        <NumberInput
-                                            min={1}
-                                            max={5}
-                                            defaultValue={1}
-                                            {...form.getInputProps('rating')}
-                                        />
-                                        <Button mt="md" radius="md"
-                                                bg="dark"
-                                                ml="xl"
-                                                mr="xl"
-                                                type="submit"
-                                                className="buttonCover"
-                                        >
-                                            Dodaj komentarz
-                                        </Button>
-                                    </Box>
-                                </Box>
-                            </form>
-                        </Paper>
-                    </Box>
+                <Box >
+                    <Text fw={700} fz="xl" mb="lg" style={{textAlign:"center"}}>
+                        Profil użytkownika
+                    </Text>
+                    <Grid gutter="lg" align="stretch">
+                        <Grid.Col span={{ base: 12, md: 4 }} style={{ textAlign: 'center' }}>
+                            <Image
+                                radius="xl"
+                                width={250}
+                                height={250}
+                                src="https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg"
+                                mx="auto"
+                            />
+                        </Grid.Col>
 
-                    <Text fw={700} mt="lg" mb="sm">Opinie o użytkowniku:</Text>
-                    <ScrollArea>
+                        <Grid.Col span={{ base: 12, md: 5 }}>
+                            <List spacing="sm" pl="md">
+                                <Text mb="md" fw={700}>Konto utworzono: {formattedDate}</Text>
+                                <Text mb="md">Imię: {user.name}</Text>
+                                <Text mb="md">Nazwisko: {user.surename}</Text>
+                                <Text mb="md">Numer: {user.number}</Text>
+                                <Text>Email: {user.email}</Text>
+                            </List>
+                        </Grid.Col>
+
+                        <Grid.Col span={{ base: 12, md: 3 }}>
+                            <Text fw={700} mb="xs">Ocena:</Text>
+                            <Box display="flex">{renderStars(Number(rating))}</Box>
+                        </Grid.Col>
+                    </Grid>
+                </Box>
+
+                <Box mt="xl">
+                    <Text fw={700} mb="sm">Dodaj komentarz:</Text>
+                    <Paper p="md" radius="md" shadow="xs">
+                        <form onSubmit={form.onSubmit(handleSubmit)}>
+                            <Grid gutter="md">
+                                <Grid.Col span={{ base: 12, md: 8 }}>
+                                    <Text mb="xs">Treść komentarza:</Text>
+                                    <Textarea
+                                        name="text"
+                                        minRows={3}
+                                        required
+                                        autosize
+                                        placeholder="treść komentarza"
+                                        {...form.getInputProps('text')}
+                                    />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 4 }}>
+                                    <Text mb="xs">Ocena (1-5):</Text>
+                                    <NumberInput
+                                        min={1}
+                                        max={5}
+                                        defaultValue={1}
+                                        {...form.getInputProps('rating')}
+                                    />
+                                    <Button
+                                        mt="md"
+                                        radius="md"
+                                        bg="dark"
+                                        fullWidth
+                                        type="submit"
+                                        className="buttonCover"
+                                    >
+                                        Dodaj komentarz
+                                    </Button>
+                                </Grid.Col>
+                            </Grid>
+                        </form>
+                    </Paper>
+                </Box>
+
+                <Box mt="xl">
+                    <Text fw={700} mb="sm">Opinie o użytkowniku:</Text>
+                    <ScrollArea h="30vh">
                         {comments.length > 0 ? (
-                            <ScrollArea h="35vh">
-                                <List spacing="sm" p="lg" ml="xl" mr="xl">
-                                    {comments.map((comment) => (
-                                        <Paper key={comment.id} p="md" shadow="md" radius="md" mb="md">
-                                            <Text fw={600}>{comment.userId}</Text>
-                                            <Box display="flex" style={{ alignItems: "center" }} mt="xs">
-                                                {renderStars(comment.rating)}
-                                                <Text ml="md">{comment.rating}/5</Text>
-                                            </Box>
-                                            <Text mt="xs">{comment.text}</Text>
-                                        </Paper>
-                                    ))}
-                                </List>
-                            </ScrollArea>
+                            <List spacing="sm" p="lg">
+                                {comments.map((comment) => (
+                                    <Paper key={comment.id} p="md" shadow="md" radius="md" mb="md">
+                                        <Text fw={600}>{comment.createdAt.toLocaleString()}</Text>
+                                        <Box display="flex" style={{ alignItems: "center" }} mt="xs">
+                                            {renderStars(comment.rating)}
+                                            <Text ml="md">{comment.rating}/5</Text>
+                                        </Box>
+                                        <Text mt="xs">{comment.text}</Text>
+                                    </Paper>
+                                ))}
+                            </List>
                         ) : (
                             <Text>Brak opinii o tym użytkowniku.</Text>
                         )}
@@ -168,5 +178,6 @@ export const UserPage = () => {
                 </Box>
             </Paper>
         </>
-    )
+    );
+
 }

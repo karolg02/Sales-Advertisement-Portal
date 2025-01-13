@@ -71,7 +71,7 @@ export const OfferForm = () => {
 
     return (
         <div>
-            <Paper shadow="xs" p="xl" style={{ position: 'relative'}}>
+            <Paper h="100%" shadow="lg" radius="lg" p="xl" style={{ position: 'relative'}}>
                 <Notifications style={{ position: 'fixed', top: 60, right: 0 }} />
                     <form onSubmit={form.onSubmit(handleSubmit)}>
                         <SimpleGrid ml="xl" mr="xl" cols={{base: 1, sm: 2, lg: 3}}>

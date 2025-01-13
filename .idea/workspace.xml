@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+little changes">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/register/RegisterPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/yoursalesannouncement/categories.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/KISiM-AGH/projekt-zaliczeniowy-dark-side.git&quot;,
-    &quot;accountId&quot;: &quot;caabc324-19d6-408d-84db-daf26aec6b4a&quot;
+    &quot;accountId&quot;: &quot;f1291ec6-8ccf-4848-9529-060fe7fc4e85&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -51,39 +49,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore_missing_gitignore": "true",
-    "javascript.nodejs.core.library.configured.version": "22.12.0",
-    "javascript.nodejs.core.library.typings.version": "22.10.5",
-    "js.last.introduce.type": "CONST",
-    "last_opened_file_path": "C:/Users/Gabriel/WebstormProjects/projekt-zaliczeniowy-dark-side2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.backend.executor": "Run",
-    "npm.frontend.executor": "Run",
-    "npm.runbackend.executor": "Run",
-    "npm.runfrontend.executor": "Run",
-    "npm.start.executor": "Run",
-    "npm.start:debug.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\Gabriel\\WebstormProjects\\projekt-zaliczeniowy-dark-side2\\backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.18.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.3&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Karol/Desktop/aplikacjaYourSaleAnnouncement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.backend.executor&quot;: &quot;Run&quot;,
+    &quot;npm.frontend.executor&quot;: &quot;Run&quot;,
+    &quot;npm.runbackend.executor&quot;: &quot;Run&quot;,
+    &quot;npm.runfrontend.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start:debug.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Karol\\Desktop\\aplikacjaYourSaleAnnouncement\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gabriel\WebstormProjects\projekt-zaliczeniowy-dark-side2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Gabriel\WebstormProjects\projekt-zaliczeniowy-dark-side2\cypress" />
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src" />
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend" />
       <recent name="C:\Users\Karol\Desktop\aplikacjaYourSaleAnnouncement\frontend\src\features\yoursalesannouncement" />
@@ -106,7 +99,7 @@
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="node" />
+      <node-interpreter value="$APPLICATION_CONFIG_DIR$/node/versions/20.15.0/node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -118,7 +111,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
       </set>
     </attachedChunks>
   </component>
@@ -226,12 +219,7 @@
       <workItem from="1734717801367" duration="73000" />
       <workItem from="1735405577496" duration="636000" />
       <workItem from="1736103353503" duration="1000" />
-      <workItem from="1736189581213" duration="650000" />
-      <workItem from="1736200736274" duration="265000" />
-      <workItem from="1736201025472" duration="156000" />
-      <workItem from="1736344706107" duration="912000" />
-      <workItem from="1736790212828" duration="988000" />
-      <workItem from="1736791730100" duration="4673000" />
+      <workItem from="1736189581213" duration="2696000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -489,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732640757989</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="+working">
+      <option name="closed" value="true" />
+      <created>1736190525992</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1736190525992</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +509,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="validation for adding items to cart, +(brak ceny przy przedmiocie w koszyku, na przyszlosc)" />
     <MESSAGE value="+frontend :)" />
     <MESSAGE value="+front items, login, register, logout, ofert adding" />
     <MESSAGE value="+ deleting option" />
@@ -538,6 +533,7 @@
     <MESSAGE value="+comments" />
     <MESSAGE value="probably the end" />
     <MESSAGE value="+little changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="+little changes" />
+    <MESSAGE value="+working" />
+    <option name="LAST_COMMIT_MESSAGE" value="+working" />
   </component>
 </project>

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "react:test": "react-scripts test --watchAll=false",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,6 +21,7 @@
     "@mantine/notifications": "^7.13.4",
     "@nestjs/jwt": "^10.2.0",
     "@tabler/icons-react": "^3.21.0",
+    "@testing-library/react": "^16.1.0",
     "dayjs": "^1.11.13",
     "jotai": "^2.10.1",
     "jwt-decode": "^4.0.0",
@@ -28,7 +30,9 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-transition-group": "^4.4.5",
-    "recharts": "^2.13.0"
+    "recharts": "^2.13.0",
+    "universal-cookie": "^7.2.2",
+    "vitest": "^2.1.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -37,6 +41,8 @@
     "@types/react-dom": "^18.3.1",
     "@types/react-transition-group": "^4.4.11",
     "@vitejs/plugin-react": "^4.3.3",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",

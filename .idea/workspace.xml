@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <list default="true" id="e1c3b746-9643-46f7-a429-3f70befe20a8" name="Changes" comment="+dodanie testów 2.0">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/login.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/login.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/responsivity.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/responsivity.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/support/commands.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/commands.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +100,7 @@
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="$APPLICATION_CONFIG_DIR$/node/versions/20.15.0/node" />
+      <node-interpreter value="node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -487,7 +494,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736796873356</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1736796959880</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1736796959880</updated>
+    </task>
+    <task id="LOCAL-00036" summary="+dodanie testów 2.0">
+      <option name="closed" value="true" />
+      <created>1736797466310</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1736797466310</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +534,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="+ deleting option" />
     <MESSAGE value="+ mantine style for making an offer etc" />
     <MESSAGE value="+ singleoffer page, which shows offer depends on id, need to add email and number to the seller" />
     <MESSAGE value="+ dodanie koszyka, poprawic powiadomienia przy usuwaniu z koszyka" />
@@ -536,6 +558,7 @@
     <MESSAGE value="+working" />
     <MESSAGE value="+dodanie testow" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="+dodanie testów 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="+dodanie testów 2.0" />
   </component>
 </project>
